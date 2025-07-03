@@ -88,7 +88,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    height: 80vh;
     position: relative;
     display: flex;
     align-items: center;
@@ -381,6 +381,7 @@ nav {
     color: #2d3748;
     margin-bottom: 0.5rem;
     font-weight: 500;
+    /* font-family: 'Fira Sans', sans-serif; */
 }
 .solution-content h3 {
     font-size: 4rem;
@@ -393,7 +394,19 @@ nav {
     margin-bottom: 1.5rem;
     line-height: 1.4;   
 }
+.solution-content p {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1rem;
+    color: #4a5568;
+    font-weight: 100;
+}
 
+.solution-content h2 {
+    font-size: 1rem;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
 
 
 /* ======================= Benefits Section ======================= */
@@ -604,7 +617,7 @@ body.team-page {
 }
 
 .team-member {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.80);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 40px 30px;
