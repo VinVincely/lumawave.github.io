@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PA Probe - LumaWave Inc.</title>
+    <!-- Google Fonts Imports -->
+    <link href="https://fonts.googleapis.com/css2?family=Figtree&family=General+Sans&family=Inter&family=Manrope&family=Outfit&family=Plus+Jakarta+Sans&family=Space+Grotesk&family=Sora&family=Syne&family=Urbanist&family=Rubik&family=Poppins&family=Mulish&family=Quicksand&family=Kanit&family=Barlow&family=IBM+Plex+Sans&family=DM+Sans&family=Be+Vietnam+Pro&family=Lexend&family=Work+Sans&family=Asap&family=Cabin&family=Public+Sans&family=Prompt&family=Chivo&family=Heebo&family=Source+Sans+Pro&family=Nunito&family=Oxygen&family=Hind&family=Varela+Round&family=Questrial&family=Exo+2&family=Mukta&family=Titillium+Web&family=Ubuntu&family=Karla&family=Josefin+Sans&family=Fira+Sans&family=Raleway&family=Zilla+Slab&family=Catamaran&family=Archivo&family=Red+Hat+Display&family=Assistant&family=Sen&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="..\styles1.css">  
+    <style>
+        /* Hero Section - Narrower */
+        .device-hero {
+            margin-top: 70px;
+            padding: 80px 20px 60px;
+            background: linear-gradient(135deg, #0d7377 0%, #14a085 25%, #2dd4bf 50%, #7dd3fc 75%, #e0f7fa 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .device-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .device-hero .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Exploded View Section */
+        .exploded-view {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 4rem 2rem;
+        }
+
+        .device-diagram {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .diagram-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        /* Technical Specs */
+        .tech-specs {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-specs h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #14a085;
+            border-bottom: 3px solid #14a085;
+            padding-bottom: 0.5rem;
+        }
+
+        .spec-item {
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .spec-item:hover {
+            border-color: #14a085;
+        }
+
+        .spec-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .spec-header:hover {
+            background: linear-gradient(135deg, rgba(20, 160, 133, 0.1) 0%, rgba(45, 212, 191, 0.1) 100%);
+        }
+
+        .spec-header h4 {
+            font-size: 1.2rem;
+            color: #2d3748;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .spec-toggle {
+            font-size: 1.5rem;
+            color: #14a085;
+            transition: transform 0.3s ease;
+        }
+
+        .spec-toggle.expanded {
+            transform: rotate(180deg);
+        }
+
+        .spec-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .spec-content.expanded {
+            max-height: 500px;
+            padding: 1.5rem;
+            background: white;
+        }
+
+        .spec-content p {
+            color: #4a5568;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .device-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .device-hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .device-diagram {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .exploded-view h2 {
+                font-size: 2rem;
+            }
+
+            .spec-header h4 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="..\index.html" class="logo">LumaWave</a>
+            <ul class="nav-links">
+                <li class="has-dropdown">
+                    <a href="tech.html" class="active">Technology</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="paprobe.html">PA Probe</a></li>
+                        <li><a href="pubs.html">Publications</a></li>
+                        <li><a href="pai.html">Photoacoustic Imaging</a></li>
+                        <li><a href="studies.html">Investigational Studies</a></li>
+                    </ul>
+                </li>                               
+                <li><a href="..\about.html">About Us</a></li>
+                <li><a href="..\news.html">News</a></li>
+                <li><a href="..\contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="device-hero">
+        <h1>The PA Probe</h1>
+       <p class="subtitle" style="color: white; font-weight: bold; font-size: 1.75em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">The First Handheld Ultrasound Guided Microvascular Oxygenation Assessment Tool</p>
+    </section>
+
+    <!-- Exploded View Section -->
+    <section class="exploded-view">
+        <div class="tech-hero-content">
+            <div class="device-diagram">
+                <div class="diagram-image">
+                    <img src="../Images/Tech_PAprobe.png" alt="PA Probe Exploded View" style="max-width: 100%; max-height: 450px; object-fit: contain; border-radius: 20px;">
+                </div>
+                
+                <div class="tech-specs">
+                    <h3>Technical Specifications</h3>
+                    
+                    <div class="spec-item">
+                        <div class="spec-header" onclick="toggleSpec(this)">
+                            <h4>Ultrasound Guided Oxygenation Mapping</h4>
+                            <span class="spec-toggle">▼</span>
+                        </div>
+                        <div class="spec-content">
+                            <p>The use of ultrasound harware allows direct mapping of tissue oxygenation overlaid onto physician familiar ultrasound images</p>
+                        </div>
+                    </div>
+
+                    <div class="spec-item">
+                        <div class="spec-header" onclick="toggleSpec(this)">
+                            <h4>Deep Tissue Imaging</h4>
+                            <span class="spec-toggle">▼</span>
+                        </div>
+                        <div class="spec-content">
+                            <p>Our propietry fully integrated laser sources allow deep (up to 4 cm) quantitative imaging in tissues </p>
+                        </div>
+                    </div>
+
+                    <div class="spec-item">
+                        <div class="spec-header" onclick="toggleSpec(this)">
+                            <h4>Real-Time Imaging & Fast Assessments</h4>
+                            <span class="spec-toggle">▼</span>
+                        </div>
+                        <div class="spec-content">
+                            <p>Real-Time 2D imaging enables visualization of tissue perfusion and oxygenation.</p>
+                        </div>
+                    </div>
+
+                    <div class="spec-item">
+                        <div class="spec-header" onclick="toggleSpec(this)">
+                            <h4>Handheld for Point-of-care use</h4>
+                            <span class="spec-toggle">▼</span>
+                        </div>
+                        <div class="spec-content">
+                            <p>Our first ever compact form factor of photoacoustic imaging offers ease of use to healthcare providers in variety of in-patient, out-patient and surgical settings.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Toggle specification details - closes others when opening new one
+        function toggleSpec(header) {
+            const content = header.nextElementSibling;
+            const toggle = header.querySelector('.spec-toggle');
+            const isExpanded = content.classList.contains('expanded');
+            
+            // Close all other spec items
+            document.querySelectorAll('.spec-content.expanded').forEach(otherContent => {
+                if (otherContent !== content) {
+                    otherContent.classList.remove('expanded');
+                    otherContent.previousElementSibling.querySelector('.spec-toggle').classList.remove('expanded');
+                }
+            });
+            
+            // Toggle the clicked item
+            if (!isExpanded) {
+                content.classList.add('expanded');
+                toggle.classList.add('expanded');
+            } else {
+                content.classList.remove('expanded');
+                toggle.classList.remove('expanded');
+            }
+        }
+
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>

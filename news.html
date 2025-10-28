@@ -49,19 +49,115 @@
             margin: 0 auto;
         }
 
-        
+        /* Newsletter Section */
+        .newsletter-section {
+            background: #f8fafc;
+            padding: 20px 10px 15px;
+            margin: 0;
+        }
+
+        .newsletter-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .newsletter-title {
+            font-size: 2rem;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .newsletter-subtitle {
+            font-size: 1.1rem;            
+            color: #2d3748;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 15px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .newsletter-input:focus {
+            border-color: #14a085;
+            box-shadow: 0 0 0 3px rgba(20, 160, 133, 0.1);
+        }
+
+        .newsletter-input::placeholder {
+            color: #a0aec0;
+        }
+
+        .subscribe-btn {
+            padding: 15px 35px;
+            background: linear-gradient(135deg, #0a5a5e 0%, #0f7a66 25%, #16a085 50%, #4db8a8 75%, #7dd3fc 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(13, 115, 119, 0.3);
+        }
+
+        .subscribe-btn:hover {
+            background: linear-gradient(135deg, #7dd3fc 0%, #4db8a8 25%, #16a085 50%, #0f7a66 75%, #0a5a5e 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(13, 115, 119, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .newsletter-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .newsletter-input {
+                min-width: 100%;
+            }
+
+            .subscribe-btn {
+                width: 100%;
+            }
+        }
+
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo">LumaWave</a>
+            <a href="index.html" class="logo">LumaWave</a>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <!-- <li><a href="#products">Products</a></li> -->
-                <li><a href="news.html" class="active">News</a></li>
+                <li class="has-dropdown">
+                    <a href="Technology/tech.html" class="active">Technology</a>
+                    <ul class="dropdown-menu">                                                
+                        <li><a href="Technology/paprobe.html">PA Probe</a></li>
+                        <li><a href="Technology/pai.html">Photoacoustic Imaging</a></li>
+                        <li><a href="research.html">Publications</a></li>
+                        <li><a href="research.html">Investigational Studies</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About Us</a></li>                
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </div>
     </nav>
@@ -70,6 +166,22 @@
     <section class="page-header">
         <h1>Latest News</h1>
         <p>Read more about LumaWave's recent updates!</p>
+    </section>
+
+    <!-- Newsletter Signup Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <!-- <h2 class="newsletter-title">Sign up for our newsletter</h2> -->
+            <p class="newsletter-subtitle">Sign up for our newsletter to stay updated with the latest news and developments from our team!</p>
+            <form class="newsletter-form" id="newsletter-form" action="https://docs.google.com/forms/d/e/1FAIpQLSeHE6_576OGARINLLPWLlOU8cKD1zdPOXT4c2JgHobBHAXWSA/formResponse" method="POST" target="hidden_iframe">
+                <input type="email" class="newsletter-input" id="newsletter-email" name="entry.1808709719" placeholder="Enter your email address" required>
+                <button type="submit" class="subscribe-btn">Subscribe</button>
+            </form>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+            <p class="newsletter-note" style="margin-top: 10px; font-size: 0.9rem; color: #718096;">
+                <!-- Or <a href="https://docs.google.com/forms/d/e/1FAIpQLSeHE6_576OGARINLLPWLlOU8cKD1zdPOXT4c2JgHobBHAXWSA/viewform" target="_blank" style="color: #14a085; text-decoration: underline;">click here to subscribe via Google Forms</a> -->
+            </p>
+        </div>
     </section>
 
     <!-- News Container -->
@@ -136,6 +248,18 @@
             } else {
                 nav.style.background = 'rgba(255, 255, 255, 0.95)';
             }
+        });
+
+        // Newsletter form submission - submits to Google Form without opening new page
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            const emailInput = document.getElementById('newsletter-email');
+            const email = emailInput.value;
+            
+            // Show confirmation message
+            setTimeout(function() {
+                alert(`Thank you for subscribing! We'll send updates to ${email}`);
+                emailInput.value = ''; // Clear the input
+            }, 500);
         });
 
         // // Add click handlers for read more buttons

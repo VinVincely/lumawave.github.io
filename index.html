@@ -13,12 +13,20 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo">LumaWave</a>
+            <a href="index.html" class="logo">LumaWave</a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <!-- <li><a href="#products">Products</a></li> -->
+                <li class="has-dropdown">
+                    <a href="Technology/tech.html" class="active">Technology</a>
+                    <ul class="dropdown-menu">                        
+                        <li><a href="Technology/pai.html">Photoacoustic Imaging</a></li>
+                        <li><a href="Technology/paprobe.html">PA Probe</a></li>
+                        <li><a href="research.html">Publications</a></li>
+                        <li><a href="research.html">Investigational Studies</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About Us</a></li>                
                 <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </div>
     </nav>
@@ -57,21 +65,11 @@
             <div class="section-content">
                 <div class="text-content">
                     <h2>THE CHALLENGE</h2>
-                    <h3>Healthcare providers need a rapid, non-invasive, point-of-care method to assess deep tissue hypoxia.</h3>
-                    <p>Currently, there are no portable methods that can spot assess oxygenation (hypoxia) of microvasculature. Clinical systems are either expensive, inacessible or impresise in measurements of tissue oxygenation.</p>
-                    <!-- <a href="#" class="cta-button">Learn More</a> -->
+                    <h3>Healthcare providers need a rapid, point-of-care method to assess peripheral tissue oxygenation.</h3>
+                    <p>Currently, there are no efficient tools that can rapidly spot assess oxygenation (hypoxia) of tissue microvasculature. Exisiting clinical modalities that assess oxygenation are expensive, inacessible or have long scan times making them ineffective for high volume clinics.</p>
                 </div>
                 <div class="image-content">
-                    <!-- <div class="image-placeholder"> -->
-                        <img src="Images/TheChallenge_Image.png" alt="Test Image" width="500px"/>
-                        <!-- <div style="
-                            background-image: url('C:/Users/VincelyVinoinDevpaul/Box/STARTUP/Marketting/website/Images/TheChallenge_Image.png');
-                            background-size: cover;
-                            background-position: center;
-                            width: 300px;
-                            height: 200px;"></div> -->
-                        <!-- <p>Medical Assessment Image</p> -->
-                    <!-- </div> -->
+                    <img src="Images/TheChallenge_Image.png" alt="Test Image" width="500px"/>
                 </div>
             </div>
         </div>
@@ -82,30 +80,17 @@
         <div class="container">
             <div class="section-content">
                 <div class="image-content">
-                    <!-- <div class="image-placeholder"> -->
-                        <img src="Images/solutionImage.png" alt="Test Image" width="700px"/>
-                        <!-- <div style="
-                            background-image: url('C:/Users/VincelyVinoinDevpaul/Box/STARTUP/Marketting/website/Images/TheChallenge_Image.png');
-                            background-size: cover;
-                            background-position: center;
-                            width: 300px;
-                            height: 200px;"></div> -->
-                        <!-- <p>Medical Assessment Image</p> -->
-                    <!-- </div> -->
+                    <img src="Images/solutionImage.png" alt="Test Image" width="700px"/>
                 </div>
                 <div class="solution-content">
                     <h2>THE SOLUTION</h2>
                     <h3>PA Probe</h3>
-                    <p>Utilizes photoacoustic technology to assess functional information using point-of-care ultrasound hardware, enabling physicians with rapid, real-time measurements of tissue oxygenation.</p> <br>
-                    <p style="font-weight: bold; font-style: italic;">PA probe is currently in the research and development phase and not available for sale in any country.
-                    </p>
-                    <!-- <a href="#" class="cta-button">Learn More</a> -->
+                    <p>Utilizes photoacoustic technology to measure microvascular oxygenation using point-of-care ultrasound hardware, enabling rapid, real-time measurements of tissue oxygenation.</p> <br>
+                    <p style="font-weight: bold; font-style: italic;">PA probe is currently in the research and development phase and not available for sale in any country.</p>
                 </div>
-                
             </div>
         </div>
     </section>
-
 
     <!-- Our Benefits Section -->
     <section class="benefits-section">
@@ -113,25 +98,20 @@
             <h2>Our Benefits</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div style="margin-top: 15px; margin-bottom: 15px;"><img src="Images/Docs.png" alt="Test Image" width="100px"/></div>
-                    <h3>Physicians</h3>
-                    <p>The PA probe allows physicians an instant spot-assessment of deep tissue oxygenation, allowing sensitive real-time measurement of hypoxia or early stage ischemia.</p>
+                    <div style="margin-top: 5px; margin-bottom: 15px;"><img src="Images/Measure.png" alt="Test Image" width="100px"/></div>                    
+                    <h3>Making critical information accessible</h3>
+                    <p>The PA probe provides real-time spot-assessments of tissue oxygenation providing actionable insights on peripheral tissue health.</p>
                 </div>
                 <div class="benefit-card">
-                    <div style="margin-bottom: 10px;"><img src="Images/Payer.png" alt="Test Image" width="140px"/></div>
-                    <h3>Payers</h3>
-                    <p> With competitive pricing to other point-of-care ultrasound systems, the PA probe allows easy assessment of hypoxia reduces healthcare costs, demonstrate effectiveness of therapies and reduce complications.</p>
+                    <div style="margin-bottom: 10px;"><img src="Images/Time.png" alt="Test Image" width="100px"/></div>
+                    <h3>Meet patient throughput demands</h3>
+                    <p> The PA probes can allow physicians to meet their patient throughput demands while ensuring effective care is provided to all.</p>
                 </div>
                 <div class="benefit-card">
-                    <div style="margin-top: 15px; margin-bottom: 15px;"><img src="Images/Patients.png" alt="Test Image" width="140px"/></div>
-                    <h3>Patients</h3>
-                    <p>The PA probe is a solution that provides patients a peace of mind as their physicians are empowered with critical clinical indicators.</p>
+                    <div style="margin-bottom: 10px;"><img src="Images/Insight.png" alt="Test Image" width="100px"/></div>
+                    <h3>Effective claims for adjustive therapies</h3>
+                    <p>Spot-assessments of oxygenation using the PA probe can provide evidence for effective insurance justification of expensive adjunctive therapies.</p>
                 </div>
-                <!-- <div class="benefit-card">
-                    <div class="benefit-icon">💰</div>
-                    <h3>Cost-Effective</h3>
-                    <p>Reduces healthcare costs by improving treatment efficiency and patient outcomes.</p>
-                </div> -->
             </div>
         </div>
     </section>

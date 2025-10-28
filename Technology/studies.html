@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigational Studies - LumaWave Inc.</title>
+    <!-- Google Fonts Imports -->
+    <link href="https://fonts.googleapis.com/css2?family=Figtree&family=General+Sans&family=Inter&family=Manrope&family=Outfit&family=Plus+Jakarta+Sans&family=Space+Grotesk&family=Sora&family=Syne&family=Urbanist&family=Rubik&family=Poppins&family=Mulish&family=Quicksand&family=Kanit&family=Barlow&family=IBM+Plex+Sans&family=DM+Sans&family=Be+Vietnam+Pro&family=Lexend&family=Work+Sans&family=Asap&family=Cabin&family=Public+Sans&family=Prompt&family=Chivo&family=Heebo&family=Source+Sans+Pro&family=Nunito&family=Oxygen&family=Hind&family=Varela+Round&family=Questrial&family=Exo+2&family=Mukta&family=Titillium+Web&family=Ubuntu&family=Karla&family=Josefin+Sans&family=Fira+Sans&family=Raleway&family=Zilla+Slab&family=Catamaran&family=Archivo&family=Red+Hat+Display&family=Assistant&family=Sen&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles1.css">
+    <style>
+        /* Hero Section */
+        .studies-hero {
+            margin-top: 70px;
+            padding: 80px 20px 60px;
+            background: linear-gradient(135deg, #0d7377 0%, #14a085 25%, #2dd4bf 50%, #7dd3fc 75%, #e0f7fa 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .studies-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .studies-hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .studies-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Disclaimer Section */
+        .disclaimer-section {
+            background: linear-gradient(135deg, #fff9e6 0%, #ffe8cc 100%);
+            border: 2px solid #14a085;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .disclaimer-section h2 {
+            color: #0d7377;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .disclaimer-section p {
+            color: #4a5568;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Study Section */
+        .study-section {
+            margin-bottom: 5rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .study-header {
+            background: linear-gradient(135deg, #0d7377 0%, #14a085 50%, #2dd4bf 100%);
+            color: white;
+            padding: 3rem 2rem;
+            position: relative;
+        }
+
+        .study-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #7dd3fc 0%, #2dd4bf 50%, #14a085 100%);
+        }
+
+        .study-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .study-header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 800px;
+        }
+
+        .study-body {
+            padding: 3rem 2rem;
+        }
+
+        .study-body h3 {
+            color: #14a085;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #14a085;
+            padding-left: 1rem;
+        }
+
+        .study-body p {
+            color: #4a5568;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .study-body ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .study-body li {
+            color: #4a5568;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 0.6rem;
+        }
+
+        /* Content Layout - Image Left, Text Right */
+        .study-content-grid {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 2rem;
+            align-items: start;
+            margin-bottom: 2rem;
+        }
+
+        /* Image Container */
+        .study-image {
+            position: sticky;
+            top: 100px;
+        }
+
+        .study-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .study-image .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(20, 160, 133, 0.1) 0%, rgba(125, 211, 252, 0.1) 100%);
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px dashed #14a085;
+            font-size: 1rem;
+            color: #14a085;
+            font-weight: 600;
+        }
+
+        .study-text-content {
+            /* Text content on the right side */
+        }
+
+        /* Publications Section */
+        .publications {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border-left: 4px solid #2dd4bf;
+        }
+
+        .publications h4 {
+            color: #0d7377;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .publications a {
+            color: #14a085;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .publications a:hover {
+            color: #0d7377;
+            text-decoration: underline;
+        }
+
+        .publication-item {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+
+        .publication-item:hover {
+            transform: translateX(5px);
+            background: #e2e8f0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #0d7377 0%, #14a085 50%, #2dd4bf 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 20px;
+            margin-top: 4rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #14a085;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            background: #f0f9ff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .study-content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .study-image {
+                position: relative;
+                top: 0;
+                margin-bottom: 2rem;
+            }
+
+            .study-image .image-placeholder {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .studies-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .study-header h2 {
+                font-size: 2rem;
+            }
+
+            .study-body h3 {
+                font-size: 1.2rem;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="..\index.html" class="logo">LumaWave</a>
+            <ul class="nav-links">
+                <li class="has-dropdown">
+                    <a href="tech.html">Technology</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="paprobe.html">PA Probe</a></li>
+                        <li><a href="pubs.html">Publications</a></li>
+                        <li><a href="pai.html">Photoacoustic Imaging</a></li>
+                        <li><a href="investigational-studies.html" class="active">Investigational Studies</a></li>
+                    </ul>
+                </li>                               
+                <li><a href="..\about.html">About Us</a></li>
+                <li><a href="..\news.html">News</a></li>
+                <li><a href="..\contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="studies-hero">
+        <h1>Investigational Studies</h1>
+        <p class="subtitle" style="color: white; font-weight: bold; font-size: 1.75em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Exploring the potential of photoacoustic imaging technology across diverse clinical applications</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="studies-content">
+        <!-- Disclaimer -->
+        <div class="disclaimer-section">
+            <h2>Investigational Use Only</h2>
+            <p>The PA Probe is currently used for research only and is not approved for clinical use.</p>
+        </div>
+
+        <!-- Wound Care Section -->
+        <section class="study-section">
+            <div class="study-header">
+                <h2>Wound Care</h2>
+                <p>Rapid chronic wound management through point-of-care tissue oxygenation assessment.</p>
+            </div>
+            <div class="study-body">
+                <div class="study-content-grid">
+                    <div class="study-image">
+                        <img src="../Images/IS_WoundCare.jpg" alt="PA Probe Exploded View" >
+                    </div>
+
+                    <div class="study-text-content">
+                        <!-- <h3>Clinical Challenge</h3>
+                        <p>Chronic wounds affect millions of patients worldwide, with healing outcomes heavily dependent on adequate tissue oxygenation and perfusion. Current assessment methods are largely subjective or require invasive measurements, making it difficult to optimize treatment strategies in real-time.</p>
+
+                        <h3>How Photoacoustic Imaging Helps</h3>
+                        <p>The PA Probe provides non-invasive, quantitative assessment of tissue oxygenation and hemoglobin content at the wound bed and surrounding tissue. This technology enables clinicians to:</p>
+                        <ul>
+                            <li>Objectively assess wound healing potential based on oxygen saturation levels</li>
+                            <li>Monitor response to treatments such as hyperbaric oxygen therapy and advanced wound dressings</li>
+                            <li>Identify areas of compromised perfusion that may require intervention</li>
+                            <li>Guide debridement decisions by visualizing viable versus non-viable tissue</li>
+                            <li>Predict healing trajectories and optimize resource allocation</li>
+                        </ul>
+
+                        <h3>Research Applications</h3> -->
+                        <p>Chronic wounds represent a significant clinical challenge, with delayed healing leading to increased morbidity and healthcare costs. Traditional assessment methods rely heavily on visual inspection and subjective scoring, which can miss underlying pathophysiological changes. Photoacoustic imaging has emerged as a promising modality for wound evaluation, offering high-resolution, depth-resolved insights into tissue oxygenation and vascular remodeling. Studies have demonstrated its ability to detect hypoxia and inflammation—key indicators of impaired healing—noninvasively and in real time. By integrating functional and molecular information, photoacoustics may enable earlier intervention and more personalized wound management strategies.</p>
+                    </div>
+                </div>
+
+                <div class="publications">
+                    <h4>Related Publications</h4>
+                    <div class="publication-item">
+                        <a href="https://onlinelibrary.wiley.com/doi/10.1111/wrr.12992" target="_blank">Mantri et. al. (2022) "Photoacoustic monitoring of angiogenesis predicts response to therapy in healing wounds" - Wound Repair and Regeneration </a>
+                    </div>
+                    <!-- <div class="publication-item">
+                        <a href="#" target="_blank">Sample Study: "Real-time monitoring of wound healing using photoacoustic imaging" - Advances in Wound Care (2023)</a>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Neonatal Imaging Section -->
+        <section class="study-section">
+            <div class="study-header">
+                <h2>Neonatal Imaging</h2>
+                <p>Non-invasive monitoring of tissue oxygenation in vulnerable newborn populations</p>
+            </div>
+            <div class="study-body">
+                <div class="study-content-grid">
+                    <div class="study-image">
+                        <img src="../Images/IS_Neo.jpg" alt="PA Probe Exploded View" >
+                    </div>
+
+                    <div class="study-text-content">
+                        
+                        <p>Neonatal hypoxic-ischemic injury is a major cause of long-term neurological deficits, yet current imaging tools like MRI and CT are costly, require sedation, and aren't suited for bedside use. Photoacoustic imaging offers a noninvasive, real-time alternative for assessing cerebral and soft tissue oxygenation. Studies show >85% sensitivity and >93% specificity in detecting hypoxia in neonatal models. With the brain imaging market projected to grow from $15.1B in 2025 to $24.8B by 2035, portable photoacoustic systems could revolutionize point-of-care neurodiagnostics in neonatology.</p>
+                    </div>
+                </div>
+
+                <div class="publications">
+                    <h4>Related Publications</h4>
+                    <div class="publication-item">
+                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0022346823005717" target="_blank">Weis et. al. (2024) "Photoacoustic Imaging as a Novel Non-invasive Biomarker to Assess Intestinal Tissue Oxygenation and Motility in Neonatal Rats" - Journal of Pediatric Surgery</a>
+                    </div>
+                    <div class="publication-item">
+                        <a href="https://opg.optica.org/boe/fulltext.cfm?uri=boe-14-1-118" target="_blank">Shan et. al. (2023) "Monitoring neonatal brain hemorrhage progression by photoacoustic tomography" - Biomedical Optics Express</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Veterinary Care Section -->
+        <section class="study-section">
+            <div class="study-header">
+                <h2>Veterinary Care</h2>
+                <p>Translating advanced imaging technology to improve animal health outcomes</p>
+            </div>
+            <div class="study-body">
+                <div class="study-content-grid">
+                    <div class="study-image">
+                        <img src="../Images/IS_Vet.jpg" alt="PA Probe Exploded View" >
+                    </div>
+
+                    <div class="study-text-content">                        
+                        <p>Veterinary care is shifting toward noninvasive, cost-effective diagnostics. Photoacoustic imaging offers real-time, high-resolution insights into tissue oxygenation and inflammation—without radiation, sedation, or expensive infrastructure. Ideal for clinics and field use, it enables early detection of conditions like cancer and vascular disease in animals. With the veterinary imaging market projected to grow to $364M by 2033, affordable, portable photoacoustic systems are poised to transform animal health diagnostics across species and settings.</p>
+                    </div>
+                </div>
+
+                <div class="publications">
+                    <h4>Related Publications</h4>
+                    <div class="publication-item">
+                        <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/vsu.14248" target="_blank">Verhaar et. al. (2025) "Real-time ancillary diagnostics for intraoperative assessment of intestinal viability in horses–looking for answers across species" - Veterinary Surgery</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>Join Our Research Efforts</h2>
+            <p style="font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Are you interested in exploring the potential of photoacoustic imaging in your clinical or research setting?</p>
+            <a href="../contact.html" class="cta-button">Contact Us</a>
+        </section>
+    </div>
+
+    <script>
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>

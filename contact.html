@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - LumaWave Inc.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree&family=General+Sans&family=Inter&family=Manrope&family=Outfit&family=Plus+Jakarta+Sans&family=Space+Grotesk&family=Sora&family=Syne&family=Urbanist&family=Rubik&family=Poppins&family=Mulish&family=Quicksand&family=Kanit&family=Barlow&family=IBM+Plex+Sans&family=DM+Sans&family=Be+Vietnam+Pro&family=Lexend&family=Work+Sans&family=Asap&family=Cabin&family=Public+Sans&family=Prompt&family=Chivo&family=Heebo&family=Source+Sans+Pro&family=Nunito&family=Oxygen&family=Hind&family=Varela+Round&family=Questrial&family=Exo+2&family=Mukta&family=Titillium+Web&family=Ubuntu&family=Karla&family=Josefin+Sans&family=Fira+Sans&family=Raleway&family=Zilla+Slab&family=Catamaran&family=Archivo&family=Red+Hat+Display&family=Assistant&family=Sen&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles1.css">
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-hero {
+            background: linear-gradient(135deg, #0d7377 0%, #14a085 25%, #2dd4bf 50%, #7dd3fc 75%, #e0f7fa 100%);
+            padding: 120px 20px 80px;
+            text-align: center;
+            color: white;
+        }
+
+        .contact-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-hero p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: -40px auto 80px;
+            padding: 0 20px;
+        }
+
+        .contact-form-wrapper {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-section-title {
+            font-size: 1.2rem;
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        /* Category Buttons */
+        .category-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            flex: 1;
+            min-width: 140px;
+            padding: 15px 25px;
+            border: 2px solid #e2e8f0;
+            background: white;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #4a5568;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .category-btn:hover {
+            border-color: #14a085;
+            color: #14a085;
+            transform: translateY(-2px);
+        }
+
+        .category-btn.active {
+            background: linear-gradient(135deg, #14a085 0%, #2dd4bf 100%);
+            border-color: #14a085;
+            color: white;
+            box-shadow: 0 4px 15px rgba(20, 160, 133, 0.3);
+        }
+
+        /* Form Fields */
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2d3748;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: #f8fafc;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #14a085;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(20, 160, 133, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px 30px;
+            background: linear-gradient(135deg, #14a085 0%, #2dd4bf 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(20, 160, 133, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(20, 160, 133, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Required indicator */
+        .required {
+            color: #e53e3e;
+            margin-left: 3px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .contact-form-wrapper {
+                padding: 35px 25px;
+            }
+
+            .category-buttons {
+                flex-direction: column;
+            }
+
+            .category-btn {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">LumaWave</a>
+            <ul class="nav-links">
+                <li class="has-dropdown">
+                    <a href="Technology/tech.html">Technology</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="technology-overview.html">Overview</a></li>
+                        <li><a href="photoacoustic.html">Photoacoustic Technology</a></li>
+                        <li><a href="pa-probe.html">PA Probe</a></li>
+                        <li><a href="research.html">Research & Development</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="about.html">About Us</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="our-story.html">Our Story</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="mission.html">Mission & Vision</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </li>                
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <h1>Get In Touch</h1>
+        <p>We'd love to hear from you. Whether you're an investor, healthcare provider, or have a general inquiry, we're here to help.</p>
+    </section>
+
+    <!-- Contact Form Section -->
+    <div class="contact-container">
+        <div class="contact-form-wrapper">
+            <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLSenS9dmJbK79csixmbeSQNHe94xd_8VbQ3KWuKeFybEhgnw4Q/formResponse" method="POST" target="hidden_iframe">
+                <!-- Category Selection -->
+                <div class="category-buttons">
+                    <button type="button" class="category-btn" data-category="Investor">Investor</button>
+                    <button type="button" class="category-btn" data-category="Care Provider">Care Provider</button>
+                    <button type="button" class="category-btn" data-category="Other">Other</button>
+                </div>
+
+                <!-- Hidden field with Google Forms entry ID -->
+                <input type="hidden" id="category" name="entry.62494389" value="" required>
+
+                <!-- Name Field -->
+                <div class="form-group">
+                    <input type="text" id="name" name="entry.876746785" placeholder="Name" required>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <input type="email" id="email" name="entry.151208667" placeholder="Email" required>
+                </div>
+
+                <!-- Company Field -->
+                <div class="form-group">
+                    <input type="text" id="company" name="entry.1901417500" placeholder="Company">
+                </div>
+
+                <!-- Message Field -->
+                <div class="form-group">
+                    <textarea id="message" name="entry.1886506945" placeholder="Tell us what you'd like to discuss..." required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+            
+            <!-- Hidden iframe for form submission -->
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Google Form URL
+        const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSenS9dmJbK79csixmbeSQNHe94xd_8VbQ3KWuKeFybEhgnw4Q/formResponse';
+
+        var submitted = false;
+
+        // Category button selection
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const categoryInput = document.getElementById('category');
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                categoryInput.value = this.dataset.category;
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            // Check if category is selected
+            if (!categoryInput.value) {
+                e.preventDefault();
+                alert('Please select a category (Investor, Care Provider, or Other)');
+                return;
+            }
+
+            // Set the form action to Google Form URL
+            this.action = GOOGLE_FORM_URL;
+            this.method = 'POST';
+            
+            submitted = true;
+            
+            // Don't prevent default - let form submit naturally to iframe
+            // Show success message after a delay
+            setTimeout(() => {
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                submitted = false;
+            }, 1000);
+        });
+
+        // Scroll effect for navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
