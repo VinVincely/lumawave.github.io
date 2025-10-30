@@ -2,19 +2,250 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Our Team</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Meet the LumaWave team - innovators dedicated to transforming healthcare through advanced photoacoustic imaging technology">
+    <meta name="theme-color" content="#14a085">
+    <title>About Us - LumaWave Team</title>
     <!-- Linking external CSS -->
     <link rel="stylesheet" href="styles1.css">
     
+    <style>
+        /* Mobile-First Touch Optimizations */
+        * {
+            -webkit-tap-highlight-color: rgba(20, 160, 133, 0.3);
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+        }
+
+        /* Team Page Header */
+        .container_team {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px 60px;
+        }
+
+        .header_team {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 0 15px;
+        }
+
+        .header_team h1 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #14a085 0%, #2dd4bf 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header_team p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: #4a5568;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Team Grid - Mobile First */
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Team Member Cards */
+        .team-member {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            text-align: center;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(20, 160, 133, 0.2);
+        }
+
+        /* LinkedIn Icon */
+        .linkedin-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #0077b5 0%, #00a0dc 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .linkedin-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 119, 181, 0.4);
+        }
+
+        .linkedin-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: white;
+        }
+
+        /* Member Photo */
+        .member-photo {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid transparent;
+            background: linear-gradient(white, white) padding-box,
+                        linear-gradient(135deg, #14a085 0%, #2dd4bf 100%) border-box;
+            box-shadow: 0 8px 25px rgba(20, 160, 133, 0.2);
+        }
+
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Member Info */
+        .member-name {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .member-title {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: #14a085;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .member-bio {
+            font-size: clamp(0.95rem, 2.5vw, 1rem);
+            color: #4a5568;
+            line-height: 1.8;
+            text-align: left;
+            hyphens: auto;
+            word-wrap: break-word;
+        }
+
+        /* Disable hover effects on touch devices */
+        @media (hover: none) {
+            .team-member:hover {
+                transform: none;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+            
+            .linkedin-icon:hover {
+                transform: none;
+            }
+        }
+
+        /* Smooth animations only on larger devices */
+        @media (prefers-reduced-motion: no-preference) and (min-width: 768px) {
+            .team-member {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+        }
+
+        /* Tablet breakpoint */
+        @media (min-width: 768px) {
+            .container_team {
+                padding: 120px 40px 80px;
+            }
+
+            .header_team {
+                margin-bottom: 5rem;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4rem;
+            }
+
+            .team-member {
+                padding: 3rem 2.5rem;
+            }
+
+            .member-photo {
+                width: 200px;
+                height: 200px;
+                margin-bottom: 2rem;
+            }
+
+            .linkedin-icon {
+                width: 45px;
+                height: 45px;
+                top: 25px;
+                right: 25px;
+            }
+
+            .linkedin-icon svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        /* Desktop breakpoint */
+        @media (min-width: 968px) {
+            .container_team {
+                padding: 140px 60px 100px;
+            }
+
+            .team-member {
+                padding: 3.5rem 3rem;
+            }
+
+            .member-photo {
+                width: 220px;
+                height: 220px;
+            }
+        }
+
+        /* Large desktop - optional 3-column layout */
+        @media (min-width: 1400px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 5rem;
+            }
+        }
+
+        /* Fix active navigation state */
+        .nav-links a[href="about.html"] {
+            color: #14a085;
+        }
+    </style>
+    
 </head>
-<body class="team-page">
+<body>
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">LumaWave</a>
             <ul class="nav-links">
                 <li class="has-dropdown">
-                    <a href="Technology/tech.html" class="active">Technology</a>
+                    <a href="Technology/tech.html">Technology</a>
                     <ul class="dropdown-menu">
                         <li><a href="Technology/paprobe.html">PA Probe</a></li>
                         <li><a href="Technology/pubs.html">Publications</a></li>
@@ -22,7 +253,7 @@
                         <li><a href="Technology/studies.html">Investigational Studies</a></li>
                     </ul>
                 </li>                               
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
                 <li><a href="news.html">News</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
@@ -37,15 +268,15 @@
 
         <div class="team-grid">
             <div class="team-member">   
-                <a href="https://www.linkedin.com/in/vinoinvincely/">        
+                <a href="https://www.linkedin.com/in/vinoinvincely/" target="_blank" rel="noopener noreferrer" aria-label="View Vinoin Vincely's LinkedIn profile">        
                     <div class="linkedin-icon">
-                        <svg viewBox="0 0 24 24">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                     </div>
                 </a>     
                 <div class="member-photo">
-                    <img src="Images/VinHeadshot.jpg" alt="Vinoin Vincely">
+                    <img src="Images/VinHeadshot.jpg" alt="Vinoin Devpaul Vincely - CEO & Co-Founder" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <h3 class="member-name">Vinoin Devpaul Vincely</h3>
                 <p class="member-title">Chief Executive Officer & Co-Founder</p>
@@ -53,19 +284,19 @@
             </div>
 
             <div class="team-member">
-                <a href="https://www.linkedin.com/in/carolyn-bayer-3b9051a/">    
+                <a href="https://www.linkedin.com/in/carolyn-bayer-3b9051a/" target="_blank" rel="noopener noreferrer" aria-label="View Carolyn Bayer's LinkedIn profile">    
                 <div class="linkedin-icon">
-                    <svg viewBox="0 0 24 24">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                     </svg>
                 </div>
                 </a> 
                 <div class="member-photo">
-                    <img src="Images/CarolynHeadshot.jfif" alt="Carolyn Bayer">
+                    <img src="Images/CarolynHeadshot.jfif" alt="Dr. Carolyn L. Bayer - CTO & Co-Founder" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <h3 class="member-name">Carolyn L. Bayer</h3>
                 <p class="member-title">Chief Technology Officer & Co-Founder</p>
-                <p class="member-bio">An expert with deep expertise in biomedical engineering, Dr. Carolyn Bayer focuses on developing advanced imaging technologies to improve women’s reproductive health. Her research integrates bioinstrumentation, optical imaging, and physiological modeling to better understand conditions like preeclampsia and uterine dysfunction. As an associate professor at Tulane University, she leads interdisciplinary collaborations aimed at translating cutting-edge engineering solutions into meaningful clinical applications.</p>
+                <p class="member-bio">An expert with deep expertise in biomedical engineering, Dr. Carolyn Bayer focuses on developing advanced imaging technologies to improve womenâ€™s reproductive health. Her research integrates bioinstrumentation, optical imaging, and physiological modeling to better understand conditions like preeclampsia and uterine dysfunction. As an associate professor at Tulane University, she leads interdisciplinary collaborations aimed at translating cutting-edge engineering solutions into meaningful clinical applications.</p>
             </div>
 
             <!-- <div class="team-member">
@@ -83,5 +314,60 @@
             </div> -->
         </div>
     </div>
+
+    <script>
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateY(30px)';
+                    
+                    setTimeout(() => {
+                        entry.target.style.transition = 'all 0.6s ease';
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, 100);
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe team members for animation
+        document.querySelectorAll('.team-member').forEach(member => {
+            observer.observe(member);
+        });
+    </script>
 </body>
 </html>

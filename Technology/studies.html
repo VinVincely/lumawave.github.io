@@ -8,71 +8,75 @@
     <link href="https://fonts.googleapis.com/css2?family=Figtree&family=General+Sans&family=Inter&family=Manrope&family=Outfit&family=Plus+Jakarta+Sans&family=Space+Grotesk&family=Sora&family=Syne&family=Urbanist&family=Rubik&family=Poppins&family=Mulish&family=Quicksand&family=Kanit&family=Barlow&family=IBM+Plex+Sans&family=DM+Sans&family=Be+Vietnam+Pro&family=Lexend&family=Work+Sans&family=Asap&family=Cabin&family=Public+Sans&family=Prompt&family=Chivo&family=Heebo&family=Source+Sans+Pro&family=Nunito&family=Oxygen&family=Hind&family=Varela+Round&family=Questrial&family=Exo+2&family=Mukta&family=Titillium+Web&family=Ubuntu&family=Karla&family=Josefin+Sans&family=Fira+Sans&family=Raleway&family=Zilla+Slab&family=Catamaran&family=Archivo&family=Red+Hat+Display&family=Assistant&family=Sen&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles1.css">
     <style>
-        /* Hero Section */
+        /* Hero Section - Mobile Optimized */
         .studies-hero {
-            margin-top: 70px;
-            padding: 80px 20px 60px;
+            margin-top: 60px;
+            padding: 60px 15px 40px;
             background: linear-gradient(135deg, #0d7377 0%, #14a085 25%, #2dd4bf 50%, #7dd3fc 75%, #e0f7fa 100%);
             color: white;
             text-align: center;
         }
 
         .studies-hero h1 {
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 6vw, 3.5rem);
             font-weight: 700;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
         }
 
         .studies-hero p {
-            font-size: 1.3rem;
+            font-size: clamp(1rem, 3.5vw, 1.3rem);
             opacity: 0.95;
             max-width: 900px;
             margin: 0 auto;
+            padding: 0 10px;
+            line-height: 1.5;
         }
 
         /* Main Content */
         .studies-content {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 2rem 1rem;
         }
 
-        /* Disclaimer Section */
+        /* Disclaimer Section - Mobile Optimized */
         .disclaimer-section {
             background: linear-gradient(135deg, #fff9e6 0%, #ffe8cc 100%);
             border: 2px solid #14a085;
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 4rem;
+            border-radius: 12px;
+            padding: 1.25rem 1rem;
+            margin-bottom: 2.5rem;
             text-align: center;
         }
 
         .disclaimer-section h2 {
             color: #0d7377;
-            font-size: 1.5rem;
+            font-size: clamp(1.15rem, 4vw, 1.5rem);
             margin-bottom: 0.5rem;
         }
 
         .disclaimer-section p {
             color: #4a5568;
-            font-size: 1.1rem;
+            font-size: clamp(0.95rem, 3vw, 1.1rem);
             font-weight: 600;
+            line-height: 1.5;
         }
 
-        /* Study Section */
+        /* Study Section - Mobile Optimized */
         .study-section {
-            margin-bottom: 5rem;
+            margin-bottom: 3rem;
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            border-radius: 20px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
 
         .study-header {
             background: linear-gradient(135deg, #0d7377 0%, #14a085 50%, #2dd4bf 100%);
             color: white;
-            padding: 3rem 2rem;
+            padding: 2rem 1.25rem;
             position: relative;
         }
 
@@ -87,200 +91,331 @@
         }
 
         .study-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: clamp(1.75rem, 6vw, 2.5rem);
+            margin-bottom: 0.75rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            line-height: 1.2;
         }
 
         .study-header p {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 3.5vw, 1.2rem);
             opacity: 0.95;
             max-width: 800px;
+            line-height: 1.5;
         }
 
         .study-body {
-            padding: 3rem 2rem;
+            padding: 1.5rem 1.25rem;
         }
 
         .study-body h3 {
             color: #14a085;
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 3.5vw, 1.3rem);
             margin-bottom: 1rem;
             border-left: 4px solid #14a085;
             padding-left: 1rem;
+            line-height: 1.3;
         }
 
         .study-body p {
             color: #4a5568;
-            font-size: 1rem;
+            font-size: clamp(0.95rem, 2.8vw, 1rem);
             line-height: 1.7;
             margin-bottom: 1rem;
         }
 
         .study-body ul {
-            margin-left: 2rem;
+            margin-left: 1.25rem;
             margin-bottom: 1.5rem;
         }
 
         .study-body li {
             color: #4a5568;
-            font-size: 0.95rem;
+            font-size: clamp(0.9rem, 2.5vw, 0.95rem);
             line-height: 1.7;
             margin-bottom: 0.6rem;
         }
 
-        /* Content Layout - Image Left, Text Right */
+        /* Content Layout - Mobile First */
         .study-content-grid {
             display: grid;
-            grid-template-columns: 400px 1fr;
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
             align-items: start;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
-        /* Image Container */
+        /* Image Container - Mobile Optimized */
         .study-image {
-            position: sticky;
-            top: 100px;
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
         }
 
         .study-image img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.12);
+            display: block;
         }
 
         .study-image .image-placeholder {
             width: 100%;
-            height: 400px;
+            height: 250px;
             background: linear-gradient(135deg, rgba(20, 160, 133, 0.1) 0%, rgba(125, 211, 252, 0.1) 100%);
-            border-radius: 15px;
+            border-radius: 12px;
             display: flex;
             justify-content: center;
             align-items: center;
             border: 2px dashed #14a085;
-            font-size: 1rem;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
             color: #14a085;
             font-weight: 600;
+            text-align: center;
+            padding: 1rem;
         }
 
         .study-text-content {
-            /* Text content on the right side */
+            width: 100%;
         }
 
-        /* Publications Section */
+        /* Publications Section - Mobile Optimized */
         .publications {
             background: white;
             border-radius: 10px;
-            padding: 2rem;
-            margin-top: 2rem;
-            border-left: 4px solid #2dd4bf;
+            padding: 1.25rem 1rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
         .publications h4 {
             color: #0d7377;
-            font-size: 1.3rem;
+            font-size: clamp(1.05rem, 3.5vw, 1.25rem);
             margin-bottom: 1rem;
+            border-bottom: 3px solid #14a085;
+            padding-bottom: 0.5rem;
         }
 
-        .publications a {
+        .publication-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+
+        .publication-item a {
             color: #14a085;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
+            font-size: clamp(0.9rem, 2.8vw, 1rem);
+            line-height: 1.6;
+            display: block;
+            transition: color 0.3s ease;
+            word-wrap: break-word;
         }
 
-        .publications a:hover {
+        .publication-item a:hover {
             color: #0d7377;
             text-decoration: underline;
         }
 
-        .publication-item {
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: #f8fafc;
-            border-radius: 8px;
-            transition: transform 0.2s;
-        }
-
-        .publication-item:hover {
-            transform: translateX(5px);
-            background: #e2e8f0;
-        }
-
-        /* CTA Section */
+        /* CTA Section - Mobile Optimized */
         .cta-section {
             background: linear-gradient(135deg, #0d7377 0%, #14a085 50%, #2dd4bf 100%);
             color: white;
-            padding: 4rem 2rem;
             text-align: center;
-            border-radius: 20px;
-            margin-top: 4rem;
+            padding: 2.5rem 1.25rem;
+            border-radius: 15px;
+            margin-top: 3rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
         .cta-section h2 {
-            font-size: 2.5rem;
+            font-size: clamp(1.5rem, 6vw, 2.5rem);
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            line-height: 1.2;
         }
 
         .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: clamp(1rem, 3.5vw, 1.2rem);
+            margin-bottom: 1.5rem;
             opacity: 0.95;
+            line-height: 1.5;
         }
 
         .cta-button {
             display: inline-block;
             background: white;
-            color: #14a085;
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-decoration: none;
+            color: #0d7377;
+            padding: 0.9rem 2rem;
             border-radius: 50px;
-            transition: all 0.3s;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: clamp(0.95rem, 3vw, 1.1rem);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
             background: #f0f9ff;
         }
 
-        /* Responsive Design */
-        @media (max-width: 968px) {
-            .study-content-grid {
-                grid-template-columns: 1fr;
+        /* Subtitle specific styling */
+        .subtitle {
+            color: white;
+            font-weight: bold;
+            font-size: clamp(1.1rem, 4.5vw, 1.75rem) !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ======================= TABLET BREAKPOINT (600px+) ======================= */
+        @media (min-width: 600px) {
+            .studies-hero {
+                padding: 70px 20px 50px;
+            }
+
+            .studies-content {
+                padding: 3rem 1.5rem;
+            }
+
+            .disclaimer-section {
+                padding: 1.5rem;
+                margin-bottom: 3rem;
+                border-radius: 15px;
+            }
+
+            .study-section {
+                margin-bottom: 4rem;
+                border-radius: 20px;
+            }
+
+            .study-header {
+                padding: 2.5rem 1.75rem;
+            }
+
+            .study-body {
+                padding: 2rem 1.75rem;
             }
 
             .study-image {
-                position: relative;
-                top: 0;
-                margin-bottom: 2rem;
+                max-width: 500px;
             }
 
             .study-image .image-placeholder {
-                height: 300px;
+                height: 350px;
+            }
+
+            .publications {
+                padding: 1.5rem 1.25rem;
+                margin-top: 2rem;
+            }
+
+            .cta-section {
+                padding: 3rem 1.75rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2.25rem;
             }
         }
 
-        @media (max-width: 768px) {
-            .studies-hero h1 {
-                font-size: 2.5rem;
+        /* ======================= DESKTOP BREAKPOINT (768px+) ======================= */
+        @media (min-width: 768px) {
+            .studies-hero {
+                margin-top: 70px;
+                padding: 80px 20px 60px;
             }
 
-            .study-header h2 {
-                font-size: 2rem;
+            .studies-content {
+                padding: 4rem 2rem;
             }
 
-            .study-body h3 {
-                font-size: 1.2rem;
+            .disclaimer-section {
+                padding: 2rem;
+                margin-bottom: 4rem;
             }
 
-            .cta-section h2 {
-                font-size: 2rem;
+            .study-section {
+                margin-bottom: 5rem;
+            }
+
+            .study-header {
+                padding: 3rem 2rem;
+            }
+
+            .study-body {
+                padding: 3rem 2rem;
+            }
+
+            .study-body ul {
+                margin-left: 2rem;
+            }
+
+            .study-content-grid {
+                grid-template-columns: 400px 1fr;
+                gap: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .study-image {
+                position: sticky;
+                top: 100px;
+                max-width: 400px;
+            }
+
+            .study-image .image-placeholder {
+                height: 400px;
+            }
+
+            .publications {
+                padding: 2rem;
+            }
+
+            .cta-section {
+                padding: 4rem 2rem;
+            }
+        }
+
+        /* ======================= LARGE DESKTOP BREAKPOINT (1200px+) ======================= */
+        @media (min-width: 1200px) {
+            .study-content-grid {
+                grid-template-columns: 450px 1fr;
+                gap: 2.5rem;
+            }
+
+            .study-image {
+                max-width: 450px;
+            }
+        }
+
+        /* Touch device optimization */
+        @media (hover: none) and (pointer: coarse) {
+            .publication-item a,
+            .cta-button {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .publication-item {
+                padding: 0.75rem 0;
+            }
+        }
+
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            .cta-button:hover {
+                transform: none;
+            }
+
+            .tech-panel:hover {
+                transform: none;
             }
         }
     </style>
@@ -294,9 +429,9 @@
                 <li class="has-dropdown">
                     <a href="tech.html">Technology</a>
                     <ul class="dropdown-menu">
-                        <li><a href="paprobe.html">PA Probe</a></li>
-                        <li><a href="pubs.html">Publications</a></li>
+                        <li><a href="paprobe.html">PA Probe</a></li>                        
                         <li><a href="pai.html">Photoacoustic Imaging</a></li>
+                        <li><a href="pubs.html">Publications</a></li>
                         <li><a href="investigational-studies.html" class="active">Investigational Studies</a></li>
                     </ul>
                 </li>                               
@@ -310,7 +445,7 @@
     <!-- Hero Section -->
     <section class="studies-hero">
         <h1>Investigational Studies</h1>
-        <p class="subtitle" style="color: white; font-weight: bold; font-size: 1.75em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Exploring the potential of photoacoustic imaging technology across diverse clinical applications</p>
+        <p class="subtitle">Exploring the potential of photoacoustic imaging technology across diverse clinical applications</p>
     </section>
 
     <!-- Main Content -->
@@ -330,24 +465,10 @@
             <div class="study-body">
                 <div class="study-content-grid">
                     <div class="study-image">
-                        <img src="../Images/IS_WoundCare.jpg" alt="PA Probe Exploded View" >
+                        <img src="../Images/IS_WoundCare.jpg" alt="PA Probe Wound Care Application" loading="lazy">
                     </div>
 
                     <div class="study-text-content">
-                        <!-- <h3>Clinical Challenge</h3>
-                        <p>Chronic wounds affect millions of patients worldwide, with healing outcomes heavily dependent on adequate tissue oxygenation and perfusion. Current assessment methods are largely subjective or require invasive measurements, making it difficult to optimize treatment strategies in real-time.</p>
-
-                        <h3>How Photoacoustic Imaging Helps</h3>
-                        <p>The PA Probe provides non-invasive, quantitative assessment of tissue oxygenation and hemoglobin content at the wound bed and surrounding tissue. This technology enables clinicians to:</p>
-                        <ul>
-                            <li>Objectively assess wound healing potential based on oxygen saturation levels</li>
-                            <li>Monitor response to treatments such as hyperbaric oxygen therapy and advanced wound dressings</li>
-                            <li>Identify areas of compromised perfusion that may require intervention</li>
-                            <li>Guide debridement decisions by visualizing viable versus non-viable tissue</li>
-                            <li>Predict healing trajectories and optimize resource allocation</li>
-                        </ul>
-
-                        <h3>Research Applications</h3> -->
                         <p>Chronic wounds represent a significant clinical challenge, with delayed healing leading to increased morbidity and healthcare costs. Traditional assessment methods rely heavily on visual inspection and subjective scoring, which can miss underlying pathophysiological changes. Photoacoustic imaging has emerged as a promising modality for wound evaluation, offering high-resolution, depth-resolved insights into tissue oxygenation and vascular remodeling. Studies have demonstrated its ability to detect hypoxia and inflammation—key indicators of impaired healing—noninvasively and in real time. By integrating functional and molecular information, photoacoustics may enable earlier intervention and more personalized wound management strategies.</p>
                     </div>
                 </div>
@@ -355,11 +476,8 @@
                 <div class="publications">
                     <h4>Related Publications</h4>
                     <div class="publication-item">
-                        <a href="https://onlinelibrary.wiley.com/doi/10.1111/wrr.12992" target="_blank">Mantri et. al. (2022) "Photoacoustic monitoring of angiogenesis predicts response to therapy in healing wounds" - Wound Repair and Regeneration </a>
+                        <a href="https://onlinelibrary.wiley.com/doi/10.1111/wrr.12992" target="_blank" rel="noopener noreferrer">Mantri et. al. (2022) "Photoacoustic monitoring of angiogenesis predicts response to therapy in healing wounds" - Wound Repair and Regeneration</a>
                     </div>
-                    <!-- <div class="publication-item">
-                        <a href="#" target="_blank">Sample Study: "Real-time monitoring of wound healing using photoacoustic imaging" - Advances in Wound Care (2023)</a>
-                    </div> -->
                 </div>
             </div>
         </section>
@@ -373,11 +491,10 @@
             <div class="study-body">
                 <div class="study-content-grid">
                     <div class="study-image">
-                        <img src="../Images/IS_Neo.jpg" alt="PA Probe Exploded View" >
+                        <img src="../Images/IS_Neo.jpg" alt="PA Probe Neonatal Application" loading="lazy">
                     </div>
 
                     <div class="study-text-content">
-                        
                         <p>Neonatal hypoxic-ischemic injury is a major cause of long-term neurological deficits, yet current imaging tools like MRI and CT are costly, require sedation, and aren't suited for bedside use. Photoacoustic imaging offers a noninvasive, real-time alternative for assessing cerebral and soft tissue oxygenation. Studies show >85% sensitivity and >93% specificity in detecting hypoxia in neonatal models. With the brain imaging market projected to grow from $15.1B in 2025 to $24.8B by 2035, portable photoacoustic systems could revolutionize point-of-care neurodiagnostics in neonatology.</p>
                     </div>
                 </div>
@@ -385,12 +502,11 @@
                 <div class="publications">
                     <h4>Related Publications</h4>
                     <div class="publication-item">
-                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0022346823005717" target="_blank">Weis et. al. (2024) "Photoacoustic Imaging as a Novel Non-invasive Biomarker to Assess Intestinal Tissue Oxygenation and Motility in Neonatal Rats" - Journal of Pediatric Surgery</a>
+                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0022346823005717" target="_blank" rel="noopener noreferrer">Weis et. al. (2024) "Photoacoustic Imaging as a Novel Non-invasive Biomarker to Assess Intestinal Tissue Oxygenation and Motility in Neonatal Rats" - Journal of Pediatric Surgery</a>
                     </div>
                     <div class="publication-item">
-                        <a href="https://opg.optica.org/boe/fulltext.cfm?uri=boe-14-1-118" target="_blank">Shan et. al. (2023) "Monitoring neonatal brain hemorrhage progression by photoacoustic tomography" - Biomedical Optics Express</a>
+                        <a href="https://opg.optica.org/boe/fulltext.cfm?uri=boe-14-1-118" target="_blank" rel="noopener noreferrer">Shan et. al. (2023) "Monitoring neonatal brain hemorrhage progression by photoacoustic tomography" - Biomedical Optics Express</a>
                     </div>
-                    
                 </div>
             </div>
         </section>
@@ -404,7 +520,7 @@
             <div class="study-body">
                 <div class="study-content-grid">
                     <div class="study-image">
-                        <img src="../Images/IS_Vet.jpg" alt="PA Probe Exploded View" >
+                        <img src="../Images/IS_Vet.jpg" alt="PA Probe Veterinary Application" loading="lazy">
                     </div>
 
                     <div class="study-text-content">                        
@@ -415,9 +531,8 @@
                 <div class="publications">
                     <h4>Related Publications</h4>
                     <div class="publication-item">
-                        <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/vsu.14248" target="_blank">Verhaar et. al. (2025) "Real-time ancillary diagnostics for intraoperative assessment of intestinal viability in horses–looking for answers across species" - Veterinary Surgery</a>
+                        <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/vsu.14248" target="_blank" rel="noopener noreferrer">Verhaar et. al. (2025) "Real-time ancillary diagnostics for intraoperative assessment of intestinal viability in horses–looking for answers across species" - Veterinary Surgery</a>
                     </div>
-                    
                 </div>
             </div>
         </section>

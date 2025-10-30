@@ -2,12 +2,246 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LumaWave Inc.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="LumaWave - Making point-of-care assessment of tissue vitality a reality with innovative photoacoustic imaging technology">
+    <meta name="theme-color" content="#14a085">
+    <title>LumaWave Inc. - Point-of-Care Tissue Vitality Assessment</title>
     <!-- Google Fonts Imports -->
     <link href="https://fonts.googleapis.com/css2?family=Figtree&family=General+Sans&family=Inter&family=Manrope&family=Outfit&family=Plus+Jakarta+Sans&family=Space+Grotesk&family=Sora&family=Syne&family=Urbanist&family=Rubik&family=Poppins&family=Mulish&family=Quicksand&family=Kanit&family=Barlow&family=IBM+Plex+Sans&family=DM+Sans&family=Be+Vietnam+Pro&family=Lexend&family=Work+Sans&family=Asap&family=Cabin&family=Public+Sans&family=Prompt&family=Chivo&family=Heebo&family=Source+Sans+Pro&family=Nunito&family=Oxygen&family=Hind&family=Varela+Round&family=Questrial&family=Exo+2&family=Mukta&family=Titillium+Web&family=Ubuntu&family=Karla&family=Josefin+Sans&family=Fira+Sans&family=Raleway&family=Zilla+Slab&family=Catamaran&family=Archivo&family=Red+Hat+Display&family=Assistant&family=Sen&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <!-- Linking external CSS -->
     <link rel="stylesheet" href="styles1.css">
+    
+    <style>
+        /* Mobile-First Touch Optimizations */
+        * {
+            -webkit-tap-highlight-color: rgba(20, 160, 133, 0.3);
+        }
+
+        /* Improve touch targets for mobile */
+        a, button {
+            min-height: 44px;
+            min-width: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Mobile-First Benefits Section */
+        .benefits-section {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+
+        .benefits-section h2 {
+            text-align: center;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            color: #2d3748;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2rem 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(20, 160, 133, 0.2);
+        }
+
+        .benefit-card img {
+            max-width: 100px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .benefit-card h3 {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: #2d3748;
+            margin: 1rem 0;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .benefit-card p {
+            font-size: clamp(0.95rem, 2.5vw, 1rem);
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        /* Mobile-First Partners Section */
+        .partners-section {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .partners-section h2 {
+            text-align: center;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .partners-description {
+            text-align: center;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: #4a5568;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 15px;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .partner-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(20, 160, 133, 0.2);
+        }
+
+        .partner-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        /* Responsive Images - Mobile First */
+        .image-content {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .image-content img {
+            max-width: 100%;
+            height: auto;
+            width: 100%;
+            border-radius: 15px;
+            display: block;
+        }
+
+        /* Section Content - Mobile Stacking */
+        .section-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Text readability on mobile */
+        .text-content p,
+        .solution-content p {
+            text-align: left;
+            hyphens: auto;
+            word-wrap: break-word;
+        }
+
+        /* Smooth animations only on larger devices */
+        @media (prefers-reduced-motion: no-preference) and (min-width: 768px) {
+            .benefit-card,
+            .partner-card {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+        }
+
+        /* Disable hover effects on touch devices */
+        @media (hover: none) {
+            .benefit-card:hover,
+            .partner-card:hover {
+                transform: none;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        /* Tablet breakpoint */
+        @media (min-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2.5rem;
+            }
+
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem;
+            }
+
+            .partner-card {
+                max-width: 100%;
+            }
+
+            .benefits-section,
+            .partners-section {
+                padding: 80px 40px;
+            }
+
+            .section-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+                align-items: center;
+            }
+
+            /* Reset touch target sizes for larger screens */
+            a, button {
+                min-height: auto;
+                min-width: auto;
+            }
+        }
+
+        /* Desktop breakpoint */
+        @media (min-width: 968px) {
+            .benefits-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 3rem;
+            }
+
+            .benefits-section,
+            .partners-section {
+                padding: 100px 60px;
+            }
+        }
+
+        /* Large desktop optimization */
+        @media (min-width: 1200px) {
+            .container {
+                padding: 0 40px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -18,10 +252,10 @@
                 <li class="has-dropdown">
                     <a href="Technology/tech.html" class="active">Technology</a>
                     <ul class="dropdown-menu">                        
-                        <li><a href="Technology/pai.html">Photoacoustic Imaging</a></li>
                         <li><a href="Technology/paprobe.html">PA Probe</a></li>
-                        <li><a href="research.html">Publications</a></li>
-                        <li><a href="research.html">Investigational Studies</a></li>
+                        <li><a href="Technology/pai.html">Photoacoustic Imaging</a></li>                        
+                        <li><a href="Technology/pubs.html">Publications</a></li>
+                        <li><a href="Technology/studies.html">Investigational Studies</a></li>
                     </ul>
                 </li>
                 <li><a href="about.html">About Us</a></li>                
@@ -69,7 +303,7 @@
                     <p>Currently, there are no efficient tools that can rapidly spot assess oxygenation (hypoxia) of tissue microvasculature. Exisiting clinical modalities that assess oxygenation are expensive, inacessible or have long scan times making them ineffective for high volume clinics.</p>
                 </div>
                 <div class="image-content">
-                    <img src="Images/TheChallenge_Image.png" alt="Test Image" width="500px"/>
+                    <img src="Images/TheChallenge_Image.png" alt="Healthcare Challenge Illustration" style="max-width: 100%; height: auto; border-radius: 15px;"/>
                 </div>
             </div>
         </div>
@@ -80,7 +314,7 @@
         <div class="container">
             <div class="section-content">
                 <div class="image-content">
-                    <img src="Images/solutionImage.png" alt="Test Image" width="700px"/>
+                    <img src="Images/solutionImage.png" alt="PA Probe Solution" style="max-width: 100%; height: auto; border-radius: 15px;"/>
                 </div>
                 <div class="solution-content">
                     <h2>THE SOLUTION</h2>
@@ -98,17 +332,23 @@
             <h2>Our Benefits</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div style="margin-top: 5px; margin-bottom: 15px;"><img src="Images/Measure.png" alt="Test Image" width="100px"/></div>                    
+                    <div style="margin-top: 5px; margin-bottom: 15px;">
+                        <img src="Images/Measure.png" alt="Accessibility Icon" style="max-width: 100px; width: 100%; height: auto;"/>
+                    </div>                    
                     <h3>Making critical information accessible</h3>
                     <p>The PA probe provides real-time spot-assessments of tissue oxygenation providing actionable insights on peripheral tissue health.</p>
                 </div>
                 <div class="benefit-card">
-                    <div style="margin-bottom: 10px;"><img src="Images/Time.png" alt="Test Image" width="100px"/></div>
+                    <div style="margin-bottom: 10px;">
+                        <img src="Images/Time.png" alt="Efficiency Icon" style="max-width: 100px; width: 100%; height: auto;"/>
+                    </div>
                     <h3>Meet patient throughput demands</h3>
-                    <p> The PA probes can allow physicians to meet their patient throughput demands while ensuring effective care is provided to all.</p>
+                    <p>The PA probes can allow physicians to meet their patient throughput demands while ensuring effective care is provided to all.</p>
                 </div>
                 <div class="benefit-card">
-                    <div style="margin-bottom: 10px;"><img src="Images/Insight.png" alt="Test Image" width="100px"/></div>
+                    <div style="margin-bottom: 10px;">
+                        <img src="Images/Insight.png" alt="Claims Icon" style="max-width: 100px; width: 100%; height: auto;"/>
+                    </div>
                     <h3>Effective claims for adjustive therapies</h3>
                     <p>Spot-assessments of oxygenation using the PA probe can provide evidence for effective insurance justification of expensive adjunctive therapies.</p>
                 </div>
@@ -121,19 +361,14 @@
         <div class="container">
             <h2>Our Partners</h2>
             <p class="partners-description">We collaborate with leaders and visionaries eager to revolutionize healthcare diagnostics.</p>
-            <div class="partners-grid" >
-                <div class="partners-grid">
-                    <div class="partner-card">
-                        <img src="Images/tuii_logo.png" alt="PA Probe Exploded View" style="border-radius: 15px; width: 200px;" >
-                    </div> 
-                    <div class="partner-card">
-                        <img src="Images/Part_TUcc.jpg" alt="PA Probe Exploded View" style="border-radius: 15px; width: 200px;" >
-                    </div>                  
-                </div>
-            
-                             
-           
-        </div>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <img src="Images/tuii_logo.png" alt="Tulane Innovation Institute" style="max-width: 100%; height: auto; border-radius: 15px;">
+                </div> 
+                <div class="partner-card">
+                    <img src="Images/Part_TUcc.jpg" alt="Tulane Partner" style="max-width: 100%; height: auto; border-radius: 15px;">
+                </div>                  
+            </div>
     </section>
 
     <script>

@@ -5,7 +5,280 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technology - LumaWave Inc.</title>
     <link href="https://fonts.googleapis.com/css2?family=Figtree&family=General+Sans&family=Inter&family=Manrope&family=Outfit&family=Plus+Jakarta+Sans&family=Space+Grotesk&family=Sora&family=Syne&family=Urbanist&family=Rubik&family=Poppins&family=Mulish&family=Quicksand&family=Kanit&family=Barlow&family=IBM+Plex+Sans&family=DM+Sans&family=Be+Vietnam+Pro&family=Lexend&family=Work+Sans&family=Asap&family=Cabin&family=Public+Sans&family=Prompt&family=Chivo&family=Heebo&family=Source+Sans+Pro&family=Nunito&family=Oxygen&family=Hind&family=Varela+Round&family=Questrial&family=Exo+2&family=Mukta&family=Titillium+Web&family=Ubuntu&family=Karla&family=Josefin+Sans&family=Fira+Sans&family=Raleway&family=Zilla+Slab&family=Catamaran&family=Archivo&family=Red+Hat+Display&family=Assistant&family=Sen&family=DM+Serif+Display&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="..\styles1.css">    
+    <link rel="stylesheet" href="..\styles1.css">
+    <style>
+        /* Mobile-First Technology Page Styles */
+        
+        /* Combined Hero and Panels Section - Mobile Optimized */
+        .tech-hero-combined {
+            background: linear-gradient(135deg, #0d7377 0%, #14a085 25%, #2dd4bf 50%, #7dd3fc 75%, #e0f7fa 100%);
+            padding: 80px 15px 50px;
+            min-height: 100vh;
+        }
+
+        .tech-hero-content {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .tech-hero-content h1 {
+            font-size: clamp(2rem, 7vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+        }
+
+        .tech-hero-content p {
+            font-size: clamp(1rem, 3.5vw, 1.3rem);
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.5;
+            padding: 0 10px;
+        }
+
+        /* Panels Container - Mobile First Grid */
+        .panels-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 10px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        /* Tech Panel - Mobile Optimized */
+        .tech-panel {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            min-height: 280px;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tech-panel:active {
+            transform: scale(0.98);
+        }
+
+        /* Panel Image - Mobile Optimized */
+        .panel-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover !important;
+            background-position: center !important;
+            opacity: 0.75;
+            z-index: 1;
+            transition: all 0.4s ease;
+        }
+
+        .tech-panel:hover .panel-image {
+            opacity: 0.85;
+            transform: scale(1.05);
+        }
+
+        .panel-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);
+            z-index: 1;
+        }
+
+        /* Panel Content - Mobile Optimized */
+        .panel-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px 15px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .panel-title {
+            font-size: clamp(1.5rem, 6vw, 3rem);
+            color: white;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.3;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            word-wrap: break-word;
+        }
+
+        /* Individual Panel Gradient Fallbacks */
+        .panel-1 .panel-image {
+            background: linear-gradient(135deg, #14a085 0%, #2dd4bf 100%);
+        }
+
+        .panel-2 .panel-image {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .panel-3 .panel-image {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .panel-4 .panel-image {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        /* Animation States */
+        .tech-panel {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ======================= SMALL MOBILE (400px+) ======================= */
+        @media (min-width: 400px) {
+            .tech-panel {
+                min-height: 300px;
+            }
+
+            .panel-content {
+                padding: 25px 20px;
+            }
+        }
+
+        /* ======================= TABLET BREAKPOINT (600px+) ======================= */
+        @media (min-width: 600px) {
+            .tech-hero-combined {
+                padding: 90px 20px 60px;
+            }
+
+            .tech-hero-content {
+                margin-bottom: 50px;
+            }
+
+            .panels-container {
+                padding: 0 15px;
+                gap: 25px;
+            }
+
+            .tech-panel {
+                min-height: 320px;
+            }
+
+            .panel-content {
+                padding: 30px 25px;
+            }
+        }
+
+        /* ======================= DESKTOP BREAKPOINT (768px+) ======================= */
+        @media (min-width: 768px) {
+            .tech-hero-combined {
+                padding: 100px 20px 70px;
+            }
+
+            .tech-hero-content {
+                margin-bottom: 60px;
+            }
+
+            .panels-container {
+                padding: 0 20px;
+                gap: 30px;
+            }
+
+            .tech-panel {
+                min-height: 350px;
+            }
+
+            /* Hover effects only on non-touch devices */
+            .tech-panel:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+            }
+
+            .tech-panel:active {
+                transform: translateY(-8px);
+            }
+
+            .panel-content {
+                padding: 35px 30px;
+            }
+        }
+
+        /* ======================= TWO-COLUMN LAYOUT (900px+) ======================= */
+        @media (min-width: 900px) {
+            .panels-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tech-panel {
+                min-height: 380px;
+            }
+        }
+
+        /* ======================= LARGE DESKTOP (1200px+) ======================= */
+        @media (min-width: 1200px) {
+            .tech-hero-combined {
+                padding: 120px 20px 80px;
+            }
+
+            .tech-panel {
+                min-height: 400px;
+            }
+        }
+
+        /* Touch Device Optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .tech-panel {
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .tech-panel:hover {
+                transform: none;
+            }
+
+            .tech-panel:active {
+                transform: scale(0.97);
+                transition: transform 0.1s ease;
+            }
+        }
+
+        /* Accessibility - Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            .tech-panel,
+            .panel-image {
+                transition: none;
+            }
+
+            .tech-panel:hover {
+                transform: none;
+            }
+
+            .panel-image:hover {
+                transform: none;
+            }
+        }
+
+        /* Loading State */
+        @supports (content-visibility: auto) {
+            .tech-panel {
+                content-visibility: auto;
+                contain-intrinsic-size: 300px;
+            }
+        }
+
+        /* High Resolution Screens */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .panel-title {
+                text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+            }
+        }
+    </style>    
 </head>
 <body>
     <!-- Navigation -->
@@ -19,7 +292,7 @@
                         <li><a href="paprobe.html">PA Probe</a></li>
                         <li><a href="pubs.html">Publications</a></li>
                         <li><a href="pai.html">Photoacoustic Imaging</a></li>
-                        <li><a href="#studies">Investigational Studies</a></li>
+                        <li><a href="investigational-studies.html">Investigational Studies</a></li>
                     </ul>
                 </li>                               
                 <li><a href="..\about.html">About Us</a></li>
@@ -38,19 +311,17 @@
         
         <div class="panels-container">
             <!-- Panel 1: PA Probe -->
-            <div class="tech-panel panel-1" id="pa-probe">
-                <div class="panel-image" style="background-image: url('../Images/Tech_PAprobe.png'); background-size: 110% !important; background-position: center;">                    
+            <div class="tech-panel panel-1" id="pa-probe" role="button" tabindex="0" aria-label="Navigate to PA Probe page">
+                <div class="panel-image" style="background-image: url('../Images/Tech_PAprobe.png'); background-size: 110% !important; background-position: center;" role="img" aria-label="PA Probe technology">                    
                 </div>
                 <div class="panel-content">
                     <h2 class="panel-title">The PA Probe</h2>
                 </div>
             </div>
             
-
             <!-- Panel 3: Photoacoustic Imaging -->
-            <div class="tech-panel panel-3" id="photoacoustic">
-                <div class="panel-image" style="background-image: url('../Images/Tech_PA_panel.jpg');">
-                    <!-- Replace 'photoacoustic.jpg' with your actual image filename -->
+            <div class="tech-panel panel-3" id="photoacoustic" role="button" tabindex="0" aria-label="Navigate to Photoacoustic Imaging page">
+                <div class="panel-image" style="background-image: url('../Images/Tech_PA_panel.jpg');" role="img" aria-label="Photoacoustic imaging technology">
                 </div>
                 <div class="panel-content">
                     <h2 class="panel-title">Photoacoustic Imaging</h2>
@@ -58,8 +329,8 @@
             </div>
 
             <!-- Panel 2: Publications -->
-            <div class="tech-panel panel-2" id="publications">
-                <div class="panel-image" style="background-image: url('../Images/Tech_Pubs.png'); background-size: 140% !important; background-position: center;">                    
+            <div class="tech-panel panel-2" id="publications" role="button" tabindex="0" aria-label="Navigate to Publications page">
+                <div class="panel-image" style="background-image: url('../Images/Tech_Pubs.png'); background-size: 140% !important; background-position: center;" role="img" aria-label="Scientific publications">                    
                 </div>
                 <div class="panel-content">
                     <h2 class="panel-title">Publications</h2>
@@ -67,9 +338,8 @@
             </div>
 
             <!-- Panel 4: Investigational Studies -->
-            <div class="tech-panel panel-4" id="studies">
-                <div class="panel-image" style="background-image: url('../Images/Tech_OtherApps.jpg'); background-size: 130% !important; background-position: -50px 0px;">
-                    <!-- Replace 'studies.jpg' with your actual image filename -->
+            <div class="tech-panel panel-4" id="studies" role="button" tabindex="0" aria-label="Navigate to Investigational Studies page">
+                <div class="panel-image" style="background-image: url('../Images/Tech_OtherApps.jpg'); background-size: 130% !important; background-position: center;" role="img" aria-label="Investigational studies">
                 </div>
                 <div class="panel-content">
                     <h2 class="panel-title">Investigational Studies</h2>
@@ -93,58 +363,104 @@
             });
         });
 
-        // Make entire panel clickable
+        // Make entire panel clickable with keyboard support
+        const panelLinks = {
+            'pa-probe': 'paprobe.html',
+            'publications': 'pubs.html',
+            'photoacoustic': 'pai.html',
+            'studies': 'investigational-studies.html'
+        };
+
         document.querySelectorAll('.tech-panel').forEach(panel => {
+            // Click handler
             panel.addEventListener('click', function(e) {
                 const panelId = this.id;
-                const links = {
-                    'pa-probe': 'paprobe.html',
-                    'publications': 'pubs.html',
-                    'photoacoustic': 'pai.html',
-                    'studies': 'studies.html'
-                };
-                
-                if (links[panelId]) {
-                    window.location.href = links[panelId];
+                if (panelLinks[panelId]) {
+                    window.location.href = panelLinks[panelId];
                 }
+            });
+
+            // Keyboard accessibility
+            panel.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const panelId = this.id;
+                    if (panelLinks[panelId]) {
+                        window.location.href = panelLinks[panelId];
+                    }
+                }
+            });
+
+            // Touch feedback
+            panel.addEventListener('touchstart', function() {
+                this.style.opacity = '0.9';
+            });
+
+            panel.addEventListener('touchend', function() {
+                this.style.opacity = '1';
             });
         });
 
         // Scroll effect for navigation
+        let ticking = false;
         window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    const nav = document.querySelector('nav');
+                    if (window.scrollY > 100) {
+                        nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                    } else {
+                        nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                    }
+                    ticking = false;
+                });
+                ticking = true;
             }
         });
 
-        // Add scroll animation for panels
+        // Optimized scroll animation for panels
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+            entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '0';
-                    entry.target.style.transform = 'translateY(30px)';
-                    
+                    // Stagger animation for better mobile performance
                     setTimeout(() => {
-                        entry.target.style.transition = 'all 0.6s ease';
                         entry.target.style.opacity = '1';
                         entry.target.style.transform = 'translateY(0)';
-                    }, 100);
+                    }, index * 100);
                     
                     observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.tech-panel').forEach(panel => {
-            observer.observe(panel);
+        // Only animate on larger screens to preserve mobile performance
+        if (window.innerWidth > 768 || !('ontouchstart' in window)) {
+            document.querySelectorAll('.tech-panel').forEach(panel => {
+                panel.style.opacity = '0';
+                panel.style.transform = 'translateY(30px)';
+                panel.style.transition = 'all 0.6s ease';
+                observer.observe(panel);
+            });
+        }
+
+        // Preload panel images for better performance
+        window.addEventListener('load', function() {
+            const images = [
+                '../Images/Tech_PAprobe.png',
+                '../Images/Tech_PA_panel.jpg',
+                '../Images/Tech_Pubs.png',
+                '../Images/Tech_OtherApps.jpg'
+            ];
+            
+            images.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
         });
     </script>
 </body>
