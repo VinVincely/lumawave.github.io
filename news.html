@@ -8,51 +8,36 @@
     <link rel="stylesheet" href="styles1.css">
 
     <style>
-       
-        /* body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #20b2aa 0%, #48cae4 100%); 
-            background-color: #f8fafc;
-            min-height: 100vh;
-            margin: 0;
-            padding-top: 80px;
-        } */
-
-        /* Navigation */
+        /* ======================= NEWS PAGE - MOBILE OPTIMIZED ======================= */
         
-
-        .nav-links a:hover::after, .nav-links a.active::after {
-            width: 100%;
-        }
-
-        /* Header Section */
+        /* Page Header */
         .page-header {
-            margin-top: 80px;
-            padding: 4rem 2rem 2rem;
+            margin-top: 60px;
+            padding: clamp(2rem, 8vw, 4rem) clamp(1rem, 4vw, 2rem) clamp(1.5rem, 6vw, 2rem);
             background: linear-gradient(135deg, #0d7377 0%, #14a085 25%, #2dd4bf 50%, #7dd3fc 75%, #e0f7fa 100%);
             color: white;
             text-align: center;
         }
 
         .page-header h1 {
-            font-size: 3rem;
+            font-size: clamp(2rem, 6vw, 3rem);
             font-weight: 300;
             margin-bottom: 1rem;
+            line-height: 1.2;
         }
 
         .page-header p {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 3vw, 1.2rem);
             opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
+            line-height: 1.5;
         }
 
         /* Newsletter Section */
         .newsletter-section {
             background: #f8fafc;
-            padding: 20px 10px 15px;
+            padding: clamp(20px, 4vw, 40px) clamp(15px, 3vw, 20px) clamp(15px, 3vw, 30px);
             margin: 0;
         }
 
@@ -63,17 +48,19 @@
         }
 
         .newsletter-title {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
             color: #2d3748;
             margin-bottom: 0.5rem;
             font-weight: 600;
         }
 
         .newsletter-subtitle {
-            font-size: 1.1rem;            
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
             color: #2d3748;
-            margin-bottom: 2rem;
+            margin-bottom: clamp(1.5rem, 4vw, 2rem);
             font-weight: 500;
+            line-height: 1.6;
+            padding: 0 10px;
         }
 
         .newsletter-form {
@@ -88,10 +75,10 @@
         .newsletter-input {
             flex: 1;
             min-width: 250px;
-            padding: 15px 20px;
+            padding: clamp(12px, 3vw, 15px) clamp(15px, 4vw, 20px);
             border: 2px solid #e2e8f0;
             border-radius: 50px;
-            font-size: 1rem;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
             transition: all 0.3s ease;
             outline: none;
         }
@@ -106,12 +93,12 @@
         }
 
         .subscribe-btn {
-            padding: 15px 35px;
+            padding: clamp(12px, 3vw, 15px) clamp(25px, 5vw, 35px);
             background: linear-gradient(135deg, #0a5a5e 0%, #0f7a66 25%, #16a085 50%, #4db8a8 75%, #7dd3fc 100%);
             color: white;
             border: none;
             border-radius: 50px;
-            font-size: 1rem;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -124,7 +111,155 @@
             box-shadow: 0 6px 20px rgba(13, 115, 119, 0.4);
         }
 
-        @media (max-width: 768px) {
+        .subscribe-btn:active {
+            transform: translateY(0);
+        }
+
+        /* News Container */
+        .news-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: clamp(30px, 6vw, 60px) clamp(15px, 3vw, 20px);
+            display: grid;
+            gap: clamp(30px, 5vw, 40px);
+        }
+
+        /* News Items */
+        .news-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+        .news-item:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            transform: translateY(-5px);
+        }
+
+        /* Featured News - Larger styling */
+        .news-item.featured {
+            border: 2px solid #14a085;
+        }
+
+        .news-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .news-content {
+            padding: clamp(20px, 4vw, 30px);
+        }
+
+        .news-date {
+            color: #14a085;
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .news-title {
+            font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .news-excerpt {
+            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            padding: clamp(10px, 2.5vw, 12px) clamp(20px, 4vw, 25px);
+            background: linear-gradient(135deg, #14a085 0%, #2dd4bf 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(20, 160, 133, 0.3);
+        }
+
+        .read-more-btn:hover {
+            background: linear-gradient(135deg, #0d7377 0%, #14a085 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(20, 160, 133, 0.4);
+        }
+
+        .read-more-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Tablet Breakpoint (768px+) */
+        @media (min-width: 768px) {
+            .page-header {
+                margin-top: 70px;
+            }
+
+            .newsletter-form {
+                flex-wrap: nowrap;
+            }
+
+            .newsletter-input {
+                min-width: 300px;
+            }
+
+            .news-item {
+                grid-template-columns: 300px 1fr;
+            }
+
+            .news-item.featured {
+                grid-template-columns: 400px 1fr;
+            }
+
+            .news-image {
+                height: 100%;
+                min-height: 250px;
+            }
+
+            .news-item.featured .news-image {
+                min-height: 300px;
+            }
+        }
+
+        /* Desktop Breakpoint (968px+) */
+        @media (min-width: 968px) {
+            .news-item {
+                grid-template-columns: 350px 1fr;
+            }
+
+            .news-item.featured {
+                grid-template-columns: 500px 1fr;
+            }
+
+            .news-item.featured .news-title {
+                font-size: 2rem;
+            }
+
+            .news-item.featured .news-excerpt {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Mobile-specific adjustments */
+        @media (max-width: 767px) {
             .newsletter-form {
                 flex-direction: column;
                 align-items: stretch;
@@ -137,8 +272,12 @@
             .subscribe-btn {
                 width: 100%;
             }
-        }
 
+            .news-container {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -147,16 +286,16 @@
             <a href="index.html" class="logo">LumaWave</a>
             <ul class="nav-links">
                 <li class="has-dropdown">
-                    <a href="Technology/tech.html" class="active">Technology</a>
+                    <a href="Technology/tech.html">Technology</a>
                     <ul class="dropdown-menu">                                                
                         <li><a href="Technology/paprobe.html">PA Probe</a></li>
                         <li><a href="Technology/pai.html">Photoacoustic Imaging</a></li>
-                        <li><a href="research.html">Publications</a></li>
-                        <li><a href="research.html">Investigational Studies</a></li>
+                        <li><a href="Technology/pubs.html">Publications</a></li>
+                        <li><a href="Technology/studies.html">Investigational Studies</a></li>
                     </ul>
                 </li>
                 <li><a href="about.html">About Us</a></li>                
-                <li><a href="news.html">News</a></li>
+                <li><a href="news.html" class="active">News</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </div>
@@ -171,16 +310,12 @@
     <!-- Newsletter Signup Section -->
     <section class="newsletter-section">
         <div class="newsletter-container">
-            <!-- <h2 class="newsletter-title">Sign up for our newsletter</h2> -->
-            <p class="newsletter-subtitle">Sign up for our newsletter to stay updated with the latest news and developments from our team!</p>
+            <p class="newsletter-subtitle">Subscribe to our newsletter for the latest updates from our team!</p>
             <form class="newsletter-form" id="newsletter-form" action="https://docs.google.com/forms/d/e/1FAIpQLSeHE6_576OGARINLLPWLlOU8cKD1zdPOXT4c2JgHobBHAXWSA/formResponse" method="POST" target="hidden_iframe">
                 <input type="email" class="newsletter-input" id="newsletter-email" name="entry.1808709719" placeholder="Enter your email address" required>
                 <button type="submit" class="subscribe-btn">Subscribe</button>
             </form>
             <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-            <p class="newsletter-note" style="margin-top: 10px; font-size: 0.9rem; color: #718096;">
-                <!-- Or <a href="https://docs.google.com/forms/d/e/1FAIpQLSeHE6_576OGARINLLPWLlOU8cKD1zdPOXT4c2JgHobBHAXWSA/viewform" target="_blank" style="color: #14a085; text-decoration: underline;">click here to subscribe via Google Forms</a> -->
-            </p>
         </div>
     </section>
 
@@ -192,10 +327,9 @@
             <div class="news-image" style="background-image: url('Images/BayerVincelyStory.jpeg');"></div>                
             <div class="news-content">
                 <div class="news-date">June 15, 2025</div>
-                <h2 class="news-title">Tulane Innovation Institue features LumaWave's portable imaging technology.</h2>
+                <h2 class="news-title">Tulane Innovation Institute features LumaWave's portable imaging technology</h2>
                 <p class="news-excerpt">LumaWave was featured in an article by Tulane's Innovation Institute, highlighting the team's progress in developing portable photoacoustic imaging technology. The feature showcases how the team is leveraging the NSF I-Corps program to evaluate clinical needs and market potential, underscoring LumaWave's commitment to advancing accessible diagnostic tools for vascular health.</p>
-                <!-- <button class="read-more-btn">Read This Article</button> -->
-                <a href="https://innovation.tulane.edu/nsf-i-corps-guides-dr-carolyn-l-bayer-and-vinoin-devpaul-vincely-advancing-portable-imaging" class="read-more-btn"> Read This Article</a>
+                <a href="https://innovation.tulane.edu/nsf-i-corps-guides-dr-carolyn-l-bayer-and-vinoin-devpaul-vincely-advancing-portable-imaging" class="read-more-btn">Read This Article</a>
             </div>
         </article>
 
@@ -204,10 +338,9 @@
             <div class="news-image" style="background-image: url('Images/OpenMIC2025.jpg');"></div>        
             <div class="news-content">
                 <div class="news-date">April 11, 2025</div>
-                <h2 class="news-title">LumaWave wins Tulane Innovation Institute's 5th Open MIC night.</h2>
+                <h2 class="news-title">LumaWave wins Tulane Innovation Institute's 5th Open MIC night</h2>
                 <p class="news-excerpt">CEO Dr. Vinoin Devpaul Vincely wins Tulane's 5th Open Medical Innovation Challenge presenting LumaWave's point-of-care photoacoustic imaging device aimed at the early detection of peripheral artery disease (PAD).</p>
-                <a href="https://innovation.tulane.edu/tulane-health-and-wellness-innovators-shine-5th-open-mic-night" class="read-more-btn"> Read This Article</a>
-                <!-- <button class="read-more-btn">Read This Article</button> -->
+                <a href="https://innovation.tulane.edu/tulane-health-and-wellness-innovators-shine-5th-open-mic-night" class="read-more-btn">Read This Article</a>
             </div>
         </article>
 
@@ -218,11 +351,9 @@
                 <div class="news-date">January 15, 2024</div>
                 <h2 class="news-title">LumaWave secures Tulane's PPOC fund to build proof-of-concept prototype point-of-care photoacoustic system</h2>
                 <p class="news-excerpt">LumaWave's team was awarded the Tulane PPOC fund to develop a proof of concept prototype of a low-cost, point-of-care photoacoustic imaging prototype for assessment of tissue ischemia. The award marks a key milestone in translating fundamental research from the Bayer Lab into a viable clinical solution.</p>
-                <button class="read-more-btn">Read This Article</button>
+                <a href="#" class="read-more-btn" onclick="alert('Article link coming soon!'); return false;">Read This Article</a>
             </div>
         </article>
-
-    
     </div>
 
     <script>
@@ -261,14 +392,6 @@
                 emailInput.value = ''; // Clear the input
             }, 500);
         });
-
-        // // Add click handlers for read more buttons
-        // document.querySelectorAll('.read-more-btn').forEach(button => {
-        //     button.addEventListener('click', function() {
-        //         // In a real application, this would navigate to the full article
-        //         alert('This would navigate to the full article page.');
-        //     });
-        // });
     </script>
 </body>
 </html>
