@@ -7,10 +7,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Figtree&family=General+Sans&family=Inter&family=Manrope&family=Outfit&family=Plus+Jakarta+Sans&family=Space+Grotesk&family=Sora&family=Syne&family=Urbanist&family=Rubik&family=Poppins&family=Mulish&family=Quicksand&family=Kanit&family=Barlow&family=IBM+Plex+Sans&family=DM+Sans&family=Be+Vietnam+Pro&family=Lexend&family=Work+Sans&family=Asap&family=Cabin&family=Public+Sans&family=Prompt&family=Chivo&family=Heebo&family=Source+Sans+Pro&family=Nunito&family=Oxygen&family=Hind&family=Varela+Round&family=Questrial&family=Exo+2&family=Mukta&family=Titillium+Web&family=Ubuntu&family=Karla&family=Josefin+Sans&family=Fira+Sans&family=Raleway&family=Zilla+Slab&family=Catamaran&family=Archivo&family=Red+Hat+Display&family=Assistant&family=Sen&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles1.css">
     <style>
-        /* Photoacoustic Page Specific Styles */
+        /* Photoacoustic Page Specific Styles - MOBILE OPTIMIZED */
         .pa-hero {
             background: linear-gradient(135deg, #0d7377 0%, #14a085 25%, #2dd4bf 50%, #7dd3fc 75%, #e0f7fa 100%);
-            padding: 120px 20px 80px;
+            padding: 80px 20px 40px;
             color: white;
         }
 
@@ -21,73 +21,66 @@
         }
 
         .pa-hero h1 {
-            font-size: 3.5rem;
+            font-size: clamp(1.75rem, 6vw, 3.5rem);
             font-weight: 700;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             text-shadow: 0 0 20px rgba(0, 0, 0, 0.9),
                          2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
         }
 
         .hero-text {
             max-width: 900px;
-            margin: 0 auto 60px auto;
+            margin: 0 auto 40px auto;
             text-align: left;
-            /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 
-                        0 0 15px rgba(0, 0, 0, 0.5),
-                         2px 2px 4px rgba(0, 0, 0, 0.3); */
             color: black;
         }
 
         .hero-section-content {
             display: grid;
-            grid-template-columns: 1fr 2fr;  /* Text takes 1 part, image takes 2 parts */
-            gap: 60px;
+            grid-template-columns: 1fr;
+            gap: 30px;
             align-items: center;
             max-width: 1200px;
-            margin: 0 auto 60px auto;
+            margin: 0 auto 40px auto;
         }
 
         .hero-text p {
-            font-size: 1.4rem;
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
             line-height: 1.6;
             margin-bottom: 1rem;
             opacity: 0.95;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
             text-align: center;
         }
 
         .subsection {
-            margin-top: 60px;
-            padding-top: 40px;
+            margin-top: 40px;
+            padding-top: 30px;
             border-top: 2px solid rgba(255, 255, 255, 0.2);
         }
 
         .subsection-title {
-            font-size: 2.5rem;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
             font-weight: 700;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             text-shadow: 0 0 20px rgba(0, 0, 0, 0.7),
                          2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.3;
         }
 
         .subsection-content {
             display: grid;
-            grid-template-columns: 1fr 2fr;  /* Text takes 1 part, image takes 2 parts */
-            gap: 60px;
+            grid-template-columns: 1fr;
+            gap: 30px;
             align-items: center;
             text-align: left;
         }
 
         .subsection-text p {
-            font-size: 1.4rem;
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
             line-height: 1.6;
             margin-bottom: 1rem;
             opacity: 0.95;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
             text-align: center;
         }
 
@@ -95,8 +88,7 @@
             width: 100%;
             height: auto;
             max-width: 100%;
-            max-height: 800px;  /* Increased from 500px */
-            border-radius: 60px;
+            border-radius: clamp(20px, 5vw, 60px);
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             background: rgba(255, 255, 255, 0.1);
@@ -104,23 +96,24 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 15px;
         }
 
         .image-container img {
             width: 100%;
             height: auto;
-            max-height: auto;  /* Increased from 500px */
             object-fit: contain;
+            border-radius: clamp(15px, 4vw, 50px);
         }
 
         .image-placeholder {
             text-align: center;
             color: rgba(255, 255, 255, 0.8);
-            padding: 40px;
+            padding: 40px 20px;
         }
 
         .image-placeholder-icon {
-            font-size: 4rem;
+            font-size: clamp(2rem, 8vw, 4rem);
             margin-bottom: 1rem;
             opacity: 0.7;
         }
@@ -128,25 +121,23 @@
         /* Button Section */
         .button-section {
             text-align: center;
-            margin-top: 60px;
-            padding-top: 40px;
+            margin-top: 40px;
+            padding-top: 30px;
             border-top: 2px solid rgba(255, 255, 255, 0.2);
         }
 
         .learn-more-btn {
             display: inline-block;
-            padding: 18px 40px;
-            font-size: 1.5rem;
+            padding: clamp(12px, 3vw, 18px) clamp(25px, 6vw, 40px);
+            font-size: clamp(1rem, 3vw, 1.5rem);
             font-weight: 600;
             color: black;
-            /* background: linear-gradient(135deg, #0a5a5e 0%, #0f7a66 25%, #16a085 50%, #4db8a8 75%, #7dd3fc 100%); */
             background: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            border: 2px solid black;
             border-radius: 50px;
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: 0 8px 25px rgba(13, 115, 119, 0.4);
-            border-color: black;
         }
 
         .learn-more-btn:hover {
@@ -157,28 +148,79 @@
             border-color: white;
         }
 
-        /* Responsive Design */
-        @media (max-width: 968px) {
-            .subsection-content,
-            .hero-section-content {
-                grid-template-columns: 1fr;
+        /* Special styling for the technique section */
+        .technique-text {
+            font-size: clamp(1.1rem, 3vw, 2rem) !important;
+            font-weight: 500;
+            line-height: 1.5;
+            color: black;
+        }
+
+        /* Tablet Breakpoint (768px+) */
+        @media (min-width: 768px) {
+            .pa-hero {
+                padding: 100px 20px 60px;
+            }
+
+            .hero-section-content,
+            .subsection-content {
+                grid-template-columns: 1fr 2fr;
                 gap: 40px;
             }
 
-            .pa-hero h1 {
-                font-size: 2.5rem;
+            .subsection {
+                margin-top: 50px;
+                padding-top: 35px;
             }
 
-            .subsection-title {
-                font-size: 2rem;
-            }
-
-            .pa-hero {
-                padding: 120px 20px 50px;
+            .button-section {
+                margin-top: 50px;
+                padding-top: 35px;
             }
 
             .image-container {
-                height: 300px;
+                padding: 20px;
+            }
+        }
+
+        /* Desktop Breakpoint (968px+) */
+        @media (min-width: 968px) {
+            .pa-hero {
+                padding: 120px 20px 80px;
+            }
+
+            .hero-section-content,
+            .subsection-content {
+                gap: 60px;
+            }
+
+            .subsection {
+                margin-top: 60px;
+                padding-top: 40px;
+            }
+
+            .button-section {
+                margin-top: 60px;
+                padding-top: 40px;
+            }
+
+            .image-container {
+                max-height: 800px;
+            }
+
+            .image-container img {
+                max-height: 800px;
+            }
+        }
+
+        /* Large Desktop (1200px+) */
+        @media (min-width: 1200px) {
+            .hero-text {
+                margin-bottom: 60px;
+            }
+
+            .hero-section-content {
+                margin-bottom: 60px;
             }
         }
     </style>
@@ -192,7 +234,7 @@
                 <li class="has-dropdown">
                     <a href="tech.html">Technology</a>
                     <ul class="dropdown-menu">
-                        <li><a href="pa-probe.html">PA Probe</a></li>
+                        <li><a href="paprobe.html">PA Probe</a></li>
                         <li><a href="pai.html" class="active">Photoacoustic Imaging</a></li>
                         <li><a href="pubs.html">Publications</a></li>
                         <li><a href="studies.html">Investigational Studies</a></li>
@@ -211,15 +253,13 @@
             <h1>What is Photoacoustic Imaging?</h1>
             <div class="hero-section-content">
                 <div class="image-container">
-                    <img src="../Images/pai_schem.png" alt="Photoacoustic Imaging" style="object-fit:contain;">
-                    <!-- Replace with your image path -->
+                    <img src="../Images/pai_schem.png" alt="Photoacoustic Imaging Schematic">
                 </div>
                 <div class="hero-text">
                     <p>
-                        Photoacoustic imaing (PAI) uses pulsed laseer light to generate sound waves. These thermoelastic expansions are facilitated by light-absorbing substances such as hemoglobin, melanin and lipids within the imaged medium. By detecting ultrasound waves, quantitative measurements of functional biomarkers such as regional oxygen saturation and hemoglobin concentrations can be measured deep within tissue (&lt 5 cm).      
+                        Photoacoustic imaging (PAI) uses pulsed laser light to generate sound waves. These thermoelastic expansions are facilitated by light-absorbing substances such as hemoglobin, melanin and lipids within the imaged medium. By detecting ultrasound waves, quantitative measurements of functional biomarkers such as regional oxygen saturation and hemoglobin concentrations can be measured deep within tissue (&lt;5 cm).      
                     </p>
                 </div>
-                
             </div>
 
             <div class="subsection">
@@ -230,12 +270,11 @@
                             The use of ultrasound hardware allows simultaneous visualization of anatomical (standard ultrasound) and functional imaging (oxygenation mapping). 
                         </p>
                         <p style="color: black;">
-                            Our algorithms allows direct calculation of oxygenation from multiwavelength PAI data.  
+                            Our algorithms allow direct calculation of oxygenation from multiwavelength PAI data.  
                         </p>
-                       
                     </div>
                     <div class="image-container">                       
-                        <img src="../Images/pai_img.png" alt="sPAI of placenta" style="object-fit:contain;">
+                        <img src="../Images/pai_img.png" alt="Photoacoustic Imaging of placenta">
                     </div>
                 </div>
             </div>
@@ -244,8 +283,8 @@
                 <h2 class="subsection-title">The LumaWave Technique</h2>
                 <div class="hero-content">
                     <div class="hero-text">
-                        <p style="font-size: 2em;">
-                            Our proprietary light delivery configuration allows us to accurately map tissue oxygentaion in real-time.
+                        <p class="technique-text">
+                            Our proprietary light delivery configuration allows us to accurately map tissue oxygenation in real-time.
                         </p>                        
                     </div>
                 </div>
@@ -253,7 +292,7 @@
 
             <!-- Button Section -->
             <div class="button-section">
-                <a href="pa-probe.html" class="learn-more-btn">Learn more about our device...</a>
+                <a href="paprobe.html" class="learn-more-btn">Learn more about our device</a>
             </div>
         </div>
     </section>
@@ -292,7 +331,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.content-section').forEach(section => {
+        document.querySelectorAll('.subsection').forEach(section => {
             observer.observe(section);
         });
     </script>
