@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Join the LumaWave team - open roles in engineering, research, and operations, transforming healthcare through photoacoustic imaging technology">
+    <meta name="theme-color" content="#14a085">
+    <title>Careers - LumaWave</title>
+    <!-- Linking external CSS -->
+    <link rel="stylesheet" href="styles1.css">
+
+    <style>
+        /* ======================= CAREERS PAGE - MOBILE OPTIMIZED ======================= */
+        * {
+            -webkit-tap-highlight-color: rgba(20, 160, 133, 0.3);
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: 60px;
+            padding: clamp(2rem, 8vw, 4rem) clamp(1rem, 4vw, 2rem) clamp(1.5rem, 6vw, 2rem);
+            background: linear-gradient(135deg, #0d7377 0%, #14a085 25%, #2dd4bf 50%, #7dd3fc 75%, #e0f7fa 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 300;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .page-header p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            opacity: 0.9;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        /* Why Join Section */
+        .perks-section {
+            background: #f8fafc;
+            padding: clamp(2rem, 6vw, 3.5rem) clamp(1rem, 4vw, 2rem);
+        }
+
+        .perks-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .perks-title {
+            text-align: center;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: #2d3748;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .perks-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .perk-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.75rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .perk-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .perk-card h3 {
+            font-size: 1.1rem;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .perk-card p {
+            font-size: 0.95rem;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        /* Jobs Container */
+        .jobs-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: clamp(20px, 5vw, 40px) clamp(15px, 3vw, 20px) clamp(40px, 6vw, 60px);
+            display: grid;
+            gap: clamp(20px, 3vw, 28px);
+        }
+
+        .no-openings {
+            display: none;
+            text-align: center;
+            background: white;
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            color: #4a5568;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Job Card */
+        .job-card {
+            background: white;
+            border-radius: 15px;
+            padding: clamp(1.5rem, 4vw, 2.25rem);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .job-card:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            transform: translateY(-5px);
+        }
+
+        .job-card-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .job-card-top > div:first-child {
+            flex: 1 1 240px;
+        }
+
+        .job-title {
+            font-size: clamp(1.25rem, 3.5vw, 1.5rem);
+            color: #2d3748;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .job-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .job-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            background: rgba(20, 160, 133, 0.1);
+            color: #0d7377;
+        }
+
+        .job-tag.location {
+            background: rgba(125, 211, 252, 0.15);
+            color: #0369a1;
+        }
+
+        .job-description {
+            font-size: clamp(0.95rem, 2.5vw, 1.02rem);
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .job-requirements {
+            margin: 0 0 0.25rem 1.1rem;
+            color: #4a5568;
+            font-size: clamp(0.9rem, 2.4vw, 0.98rem);
+            line-height: 1.8;
+        }
+
+        .job-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .info-btn {
+            display: inline-block;
+            padding: clamp(10px, 2.5vw, 12px) clamp(20px, 4vw, 26px);
+            background: white;
+            color: #14a085;
+            border: 2px solid #14a085;
+            border-radius: 25px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .info-btn:hover {
+            background: rgba(20, 160, 133, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .apply-btn {
+            display: inline-block;
+            padding: clamp(10px, 2.5vw, 12px) clamp(24px, 5vw, 32px);
+            background: linear-gradient(135deg, #14a085 0%, #2dd4bf 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(20, 160, 133, 0.3);
+        }
+
+        .apply-btn:hover {
+            background: linear-gradient(135deg, #0d7377 0%, #14a085 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(20, 160, 133, 0.4);
+        }
+
+        .apply-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Details modal body — reuses .job-description / .job-requirements styles */
+        .details-modal-body {
+            margin: 0.25rem 0 1.5rem;
+        }
+
+        .details-modal-body .job-description {
+            margin-bottom: 1.25rem;
+        }
+
+        .details-modal-body .job-requirements {
+            margin-bottom: 1.25rem;
+        }
+
+        .detail-section-title {
+            font-size: 0.85rem;
+            color: #0d7377;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 0.5rem;
+        }
+
+        .details-modal-apply {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* ======================= APPLICATION MODAL ======================= */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(26, 32, 44, 0.6);
+            backdrop-filter: blur(3px);
+            z-index: 2000;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .modal-overlay.open {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .modal-box {
+            background: white;
+            border-radius: 20px;
+            max-width: 560px;
+            width: 100%;
+            margin: 40px auto;
+            padding: clamp(1.5rem, 5vw, 2.5rem);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: modalIn 0.3s ease;
+        }
+
+        .modal-box.details-modal-box {
+            max-width: 1000px;
+        }
+
+        @keyframes modalIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            width: 36px;
+            height: 36px;
+            border: none;
+            background: #f1f5f9;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            color: #4a5568;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            background: #e2e8f0;
+            color: #2d3748;
+        }
+
+        .modal-title {
+            font-size: clamp(1.3rem, 4vw, 1.6rem);
+            color: #2d3748;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            padding-right: 30px;
+        }
+
+        .modal-subtitle {
+            font-size: 0.95rem;
+            color: #14a085;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+        }
+
+        .file-input-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 18px 16px;
+            border: 2px dashed #cbd5e0;
+            border-radius: 10px;
+            background: #f8fafc;
+            color: #4a5568;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .file-input-label:hover {
+            border-color: #14a085;
+            color: #14a085;
+            background: rgba(20, 160, 133, 0.05);
+        }
+
+        .file-input-label.has-file {
+            border-style: solid;
+            border-color: #14a085;
+            color: #0d7377;
+            background: rgba(20, 160, 133, 0.05);
+        }
+
+        #resume-input {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        .file-hint {
+            font-size: 0.8rem;
+            color: #a0aec0;
+            margin-top: 6px;
+        }
+
+        .form-status {
+            display: none;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1.25rem;
+        }
+
+        .form-status.show {
+            display: block;
+        }
+
+        .form-status.success {
+            background: rgba(20, 160, 133, 0.1);
+            color: #0d7377;
+        }
+
+        .form-status.error {
+            background: rgba(229, 62, 62, 0.1);
+            color: #c53030;
+        }
+
+        .form-status.loading {
+            background: rgba(125, 211, 252, 0.15);
+            color: #0369a1;
+        }
+
+        .submit-btn[disabled] {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        /* Tablet breakpoint */
+        @media (min-width: 768px) {
+            .page-header {
+                margin-top: 70px;
+            }
+
+            .perks-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Fix active navigation state */
+        .nav-links a[href="careers.html"] {
+            color: #14a085;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navigation Header -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">LumaWave</a>
+            <ul class="nav-links">
+                <li class="has-dropdown">
+                    <a href="Technology/tech.html">Technology</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Technology/paprobe.html">PA Probe</a></li>
+                        <li><a href="Technology/pubs.html">Publications</a></li>
+                        <li><a href="Technology/pai.html">Photoacoustic Imaging</a></li>
+                        <li><a href="Technology/studies.html">Investigational Studies</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="careers.html" class="active">Careers</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Join Our Team</h1>
+        <p>Help us transform diagnostic imaging and expand access to healthcare through photoacoustic technology.</p>
+    </section>
+
+    <!-- Why Join Section -->
+    <section class="perks-section">
+        <div class="perks-container">
+            <!-- <h2 class="perks-title">Why LumaWave</h2> -->
+            <div class="perks-grid">
+                <div class="perk-card">
+                    <div class="perk-icon">🔬</div>
+                    <h3>Meaningful Work</h3>
+                    <p>Build technology that directly improves patient outcomes and expands access to care.</p>
+                </div>
+                <div class="perk-card">
+                    <div class="perk-icon">🚀</div>
+                    <h3>Early-Stage Impact</h3>
+                    <p>Join a small, mission-driven team where every contribution shapes the company's direction.</p>
+                </div>
+                <div class="perk-card">
+                    <div class="perk-icon">🤝</div>
+                    <h3>Collaborative Culture</h3>
+                    <p>Work closely with founders, researchers, and engineers across disciplines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jobs Container -->
+    <div class="jobs-container" id="jobs-container">
+
+        
+        <!-- JOB1 - Optics System Engineer -->
+        <article class="job-card">
+            <div class="job-card-top">
+                <div>
+                    <h2 class="job-title">Optical Systems Engineer</h2>
+                    <div class="job-tags">
+                        <span class="job-tag">Full-Time</span>
+                        <span class="job-tag location">On-Site: New Orleans, LA</span>
+                    </div>
+                </div>
+                <div class="job-actions">
+                    <button class="info-btn" onclick="openDetailsModal('details-1', 'Optical Systems Engineer')">More Info</button>
+                    <button class="apply-btn" onclick="openApplyModal('Optical Systems Engineer')">Apply Now</button>
+                </div>
+            </div>
+
+            <!-- JOB1 - Optics System Engineer -->
+            <div class="job-details-source" id="details-1" hidden>
+                <p class="job-description">We are seeking a highly motivated Optical Systems Engineer to drive the design and optimization of LumaWave's photoacoustic imaging platform. This role combines hands-on experimentation with computational modeling to enable robust signal generation in tissue and inform system-level design decisions. The candidate will collaborate cross-functionally to integrate optical and acoustic subsystems, partner with academic collaborators to meet milestones, and translate early-stage research into validated prototypes. Operating in a fast-paced startup environment, this role will own technical workstreams, develop reproducible workflows, and create high-quality documentation to support both internal development and external funding efforts.</p>
+                <h4 class="detail-section-title">Job Responsibilities</h4>
+                <ul class="job-requirements">
+                    <li>Lead the optimization of photoacoustic imaging system parameters to enable robust signal generation in tissue.</li>
+                    <li>Develop and apply Monte-Carlo models to understand light–tissue interactions and inform system-level design decisions.</li>
+                    <li>Collaborate cross-functionally with internal teams (acoustic, hardware, systems) to ensure cohesive integration of optical and ultrasound components.</li>
+                    <li>Partner closely with academic collaborators to execute project plans and meet technical milestones.</li> 
+                    <li>Operate effectively in a fast-paced startup environment, demonstrating autonomy, adaptability, and the ability to drive work forward with minimal supervision.</li>
+                    <li>Develop protocols, technical documentation, and supporting materials for internal alignment and external funding efforts (e.g., grants, reports, presentations).</li> 
+                </ul>
+                <h4 class="detail-section-title">Required Experience</h4>
+                <ul class="job-requirements">
+                    <li>MS or PhD in Biomedical Engineering, Applied Physics or an equivalent field.</li>
+                    <li>Strong background in biomedical optics and/or photoacoustic imaging.</li>
+                    <li>Proven experience with benchtop optics & hands-on experimentation.</li>
+                    <li>Proficient in scientific computing tools (e.g., Python, MATLAB) for data processing.</li>
+                </ul>
+                <h4 class="detail-section-title">Compensation</h4>
+                <p class="job-description">$85,000 – $110,000 annually. </p> 
+                <p class="job-description">Final compensation offered for this position will depend on role, level, qualifications, experience, and work location. Competitive benefits will be offered, commensurate with the candidate’s qualifications and experience.</p>
+
+                <h4 class="detail-section-title">What Success Looks Like at LumaWave</h4>
+                <ul class="job-requirements">
+                    <li>Photoacoustic design parameters are clearly defined, validated, and aligned with system-level performance goals and deliverables.</li>
+                    <li>Experimental and modeling workflows consistently produce high-confidence data that de-risks key technical assumptions and accelerates development</li>
+                    <li>Collaborative milestones with external partners are met on time, with strong alignment across internal and academic teams.</li>
+                    <li>The platform advances with robust, well-characterized optical performance, supported by clear protocols, documentation, and reproducible results.</li>
+                    <li>You operate effectively in a fast-paced startup environment, taking ownership of workstreams and driving progress with minimal supervision.</li>
+                    <li>High-quality technical documentation and supporting materials are developed to enable internal decision-making and strengthen external funding efforts.</li>
+                </ul>
+                <h4 class="detail-section-title">EEO</h4>
+                <p class="job-description">LumaWave is an equal opportunity employer and prohibits unlawful discrimination based on race, color, religion, gender, sexual orientation, gender identity/expression, national origin/ancestry, age, disability, marital status, medical condition, and veteran status.</p>
+
+            </div>
+        </article>
+
+       <!-- JOB2 - Acoustic Systems Engineer -->
+        <article class="job-card">
+            <div class="job-card-top">
+                <div>
+                    <h2 class="job-title">Acoustic Systems Engineer</h2>
+                    <div class="job-tags">
+                        <span class="job-tag">Full-Time</span>
+                        <span class="job-tag location">On-Site: New Orleans, LA</span>
+                    </div>
+                </div>
+                <div class="job-actions">
+                    <button class="info-btn" onclick="openDetailsModal('details-2', 'Acoustic Systems Engineer')">More Info</button>
+                    <button class="apply-btn" onclick="openApplyModal('Acoustic Systems Engineer')">Apply Now</button>
+                </div>
+            </div>
+
+            <!-- JOB2 - Acoustic Systems Engineer -->
+            <div class="job-details-source" id="details-2" hidden>
+                <p class="job-description">
+                    We are seeking a highly motivated Acoustic Systems Engineer to lead the development of acoustic sensing and data acquisition capabilities for LumaWave's photoacoustic imaging platform. This role combines simulation, system design, and hands-on experimentation to enable reliable signal detection in tissue. The candidate will develop Verasonics-based acquisition workflows, execute k-Wave simulations, and translate system-level requirements into validated hardware and software solutions. Working closely with internal teams and academic collaborators, this individual will help drive key technical milestones while thriving in a fast-paced startup environment.
+                </p>
+
+                <h4 class="detail-section-title">Job Responsibilities</h4>
+                <ul class="job-requirements">
+                    <li>Build and maintain data acquisition scripts for ultrasound and photoacoustic imaging systems.</li>
+                    <li>Develop and execute k-Wave simulations to model and optimize transducer response and acoustic performance.</li>
+                    <li>Define, evaluate, and down-select ultrasound transducer specifications to meet system SNR and sensitivity requirements.</li>
+                    <li>Collaborate cross-functionally with optical, hardware, and systems teams to ensure seamless integration of optical and ultrasound subsystems.</li>
+                    <li>Partner closely with academic collaborators to execute project plans and achieve technical milestones.</li>
+                    <li>Operate effectively in a fast-paced startup environment, demonstrating autonomy, adaptability, and ownership of technical workstreams.</li>
+                    <li>Develop protocols, technical documentation, and supporting materials for internal alignment and external funding efforts, including grants, reports, and presentations.</li>
+                </ul>
+
+                <h4 class="detail-section-title">Required Experience</h4>
+                <ul class="job-requirements">
+                    <li>MS or PhD in Biomedical Engineering, Computer Science, or an equivalent field.</li>
+                    <li>Proficiency in scientific computing tools such as Python and MATLAB for data processing and analysis.</li>
+                    <li>Experience developing acquisition scripts for ultrasound imaging systems.</li>
+                    <li>Hands-on experience designing and executing benchtop experiments with acoustic or ultrasound systems.</li>
+                </ul>
+
+                <h4 class="detail-section-title">Preferred Qualifications</h4>
+                <ul class="job-requirements">
+                    <li>Experience with open-architecture ultrasound systems such as Verasonics.</li>
+                    <li>Demonstrated expertise using k-Wave simulations for acoustic wave propagation and transducer modeling.</li>
+                    <li>Experience developing acquisition workflows for photoacoustic imaging applications.</li>
+                    <li>Ability to translate early-stage research concepts into validated prototypes and experiments.</li>
+                    <li>Previous experience in startup environments or grant-funded research programs.</li>
+                    <li>Contributions to technical reports, publications, grant proposals, or related documentation.</li>
+                </ul>
+
+                <h4 class="detail-section-title">Compensation</h4>
+                <p class="job-description">$95,000 – $125,000 annually.</p>
+                <p class="job-description">
+                    Final compensation offered for this position will depend on role, level, qualifications, experience, and work location. Compensation may also include equity participation and a bonus program. Competitive benefits will be offered, commensurate with the candidate’s qualifications and experience.
+                </p>
+
+                <h4 class="detail-section-title">What Success Looks Like at LumaWave</h4>
+                <ul class="job-requirements">
+                    <li>A well-defined and validated acoustic sensing approach that consistently meets system-level performance requirements.</li>
+                    <li>Simulation and experimental workflows that reliably inform design decisions, reduce technical risk, and accelerate development.</li>
+                    <li>Scalable and dependable data acquisition and analysis processes that support efficient experimentation and iteration.</li>
+                    <li>Strong alignment between acoustic system design, overall platform architecture, and project milestones.</li>
+                    <li>Successful execution of collaborative technical objectives with academic and internal stakeholders.</li>
+                    <li>Proactive ownership of technical workstreams, driving measurable progress in a fast-paced development environment.</li>
+                    <li>High-quality technical documentation and supporting materials that enable informed decision-making and strengthen external funding efforts.</li>
+                </ul>
+
+                <h4 class="detail-section-title">EEO</h4>
+                <p class="job-description">
+                    LumaWave is an equal opportunity employer and prohibits unlawful discrimination based on race, color, religion, gender, sexual orientation, gender identity/expression, national origin/ancestry, age, disability, marital status, medical condition, and veteran status.
+                </p>
+            </div>
+        </article>
+
+        <div class="no-openings" id="no-openings">
+            <p>We don't have any open roles that match right now, but we're always excited to hear from talented people. Feel free to reach out via our <a href="contact.html" style="color:#14a085; font-weight:600;">Contact page</a>.</p>
+        </div>
+    </div>
+
+    <!-- Job Details Modal -->
+    <div class="modal-overlay" id="details-modal">
+        <div class="modal-box details-modal-box">
+            <button class="modal-close" onclick="closeDetailsModal()" aria-label="Close">&times;</button>
+            <h3 class="modal-title" id="details-modal-title">Position</h3>
+            <div class="details-modal-body" id="details-modal-body"></div>
+            <button class="apply-btn details-modal-apply" id="details-modal-apply-btn">Apply Now</button>
+        </div>
+    </div>
+
+    <!-- Application Modal -->
+    <div class="modal-overlay" id="apply-modal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeApplyModal()" aria-label="Close">&times;</button>
+            <h3 class="modal-title">Apply Now</h3>
+            <p class="modal-subtitle" id="modal-job-title">Position</p>
+
+            <div class="form-status" id="form-status"></div>
+
+            <form id="apply-form">
+                <input type="hidden" id="job-title-field" name="jobTitle">
+
+                <div class="form-group">
+                    <label for="applicant-name">Full Name<span class="required">*</span></label>
+                    <input type="text" id="applicant-name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-email">Email Address<span class="required">*</span></label>
+                    <input type="email" id="applicant-email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-phone">Phone Number<span class="required">*</span></label>
+                    <input type="tel" id="applicant-phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="resume-input">Resume / CV<span class="required">*</span></label>
+                    <div class="file-input-wrapper">
+                        <label class="file-input-label" id="file-input-label" for="resume-input">📎 Choose file (PDF or Word)</label>
+                        <input type="file" id="resume-input" name="resume" accept=".pdf,.doc,.docx" required>
+                    </div>
+                    <p class="file-hint">Max file size: 5 MB</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-message">Message (optional)</label>
+                    <textarea id="applicant-message" name="message" placeholder="Anything you'd like us to know?"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submit-btn">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Bar -->
+    <footer class="footer-bar">
+        <div class="footer-container">
+            <div class="footer-copyright">
+                © 2026 by LumaWave Inc. All rights reserved.
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/company/lumawave" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="https://twitter.com/lumawave" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/lumawave_imaging/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ======================= CONFIG =======================
+        // Paste the Web App URL from your deployed Google Apps Script here.
+        // See the setup guide (Apps-Script-Setup.md) provided alongside this file.
+        const SHEET_ENDPOINT_URL = "https://script.google.com/macros/s/AKfycbw7njzKon5Vb6LAdFrrhTRFn0mljz0gTnOCA8StDVH_6Ohb_UHdKO5C1fMq0dHaVVXF/exec";
+        const MAX_FILE_SIZE_MB = 5;
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // If there are no .job-card elements rendered, show the "no openings" message
+        (function toggleEmptyState() {
+            const hasJobs = document.querySelectorAll('.job-card').length > 0;
+            document.getElementById('no-openings').style.display = hasJobs ? 'none' : 'block';
+        })();
+
+        // ======================= DETAILS MODAL =======================
+        const detailsModal = document.getElementById('details-modal');
+        const detailsModalTitle = document.getElementById('details-modal-title');
+        const detailsModalBody = document.getElementById('details-modal-body');
+        const detailsModalApplyBtn = document.getElementById('details-modal-apply-btn');
+
+        function openDetailsModal(detailsId, jobTitle) {
+            const source = document.getElementById(detailsId);
+            detailsModalTitle.textContent = jobTitle;
+            detailsModalBody.innerHTML = source.innerHTML;
+            detailsModalApplyBtn.onclick = function () {
+                closeDetailsModal();
+                openApplyModal(jobTitle);
+            };
+            detailsModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDetailsModal() {
+            detailsModal.classList.remove('open');
+            if (!document.getElementById('apply-modal').classList.contains('open')) {
+                document.body.style.overflow = '';
+            }
+        }
+
+        // ======================= MODAL CONTROL =======================
+        const modal = document.getElementById('apply-modal');
+        const modalJobTitle = document.getElementById('modal-job-title');
+        const jobTitleField = document.getElementById('job-title-field');
+        const applyForm = document.getElementById('apply-form');
+        const formStatus = document.getElementById('form-status');
+        const submitBtn = document.getElementById('submit-btn');
+        const fileInput = document.getElementById('resume-input');
+        const fileInputLabel = document.getElementById('file-input-label');
+
+        function openApplyModal(jobTitle) {
+            modalJobTitle.textContent = jobTitle;
+            jobTitleField.value = jobTitle;
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeApplyModal() {
+            modal.classList.remove('open');
+            if (!detailsModal.classList.contains('open')) {
+                document.body.style.overflow = '';
+            }
+            resetForm();
+        }
+
+        function resetForm() {
+            applyForm.reset();
+            fileInputLabel.textContent = '📎 Choose file (PDF or Word)';
+            fileInputLabel.classList.remove('has-file');
+            formStatus.classList.remove('show', 'success', 'error', 'loading');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Submit Application';
+        }
+
+        // Close either modal when clicking its overlay (outside the box)
+        [modal, detailsModal].forEach(function (overlay) {
+            overlay.addEventListener('click', function (e) {
+                if (e.target !== overlay) return;
+                if (overlay === modal) closeApplyModal();
+                else closeDetailsModal();
+            });
+        });
+
+        // Close open modal(s) on Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key !== 'Escape') return;
+            if (modal.classList.contains('open')) closeApplyModal();
+            if (detailsModal.classList.contains('open')) closeDetailsModal();
+        });
+
+        // Show selected filename
+        fileInput.addEventListener('change', function () {
+            if (fileInput.files.length > 0) {
+                fileInputLabel.textContent = '📄 ' + fileInput.files[0].name;
+                fileInputLabel.classList.add('has-file');
+            } else {
+                fileInputLabel.textContent = '📎 Choose file (PDF or Word)';
+                fileInputLabel.classList.remove('has-file');
+            }
+        });
+
+        function showStatus(message, type) {
+            formStatus.textContent = message;
+            formStatus.className = 'form-status show ' + type;
+        }
+
+        function fileToBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result.split(',')[1]);
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // ======================= FORM SUBMISSION =======================
+        applyForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            if (SHEET_ENDPOINT_URL.indexOf('PASTE_YOUR_GOOGLE_APPS_SCRIPT') === 0) {
+                showStatus('This form is not connected yet. Add your Google Apps Script Web App URL in the code.', 'error');
+                return;
+            }
+
+            const file = fileInput.files[0];
+            if (!file) {
+                showStatus('Please attach your resume or CV.', 'error');
+                return;
+            }
+            if (file.size > MAX_FILE_SIZE_MB * 1024 * 1024) {
+                showStatus(`File is too large. Please upload a file under ${MAX_FILE_SIZE_MB}MB.`, 'error');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            showStatus('Uploading your application, please wait...', 'loading');
+
+            try {
+                const resumeBase64 = await fileToBase64(file);
+
+                const payload = {
+                    jobTitle: jobTitleField.value,
+                    name: document.getElementById('applicant-name').value,
+                    email: document.getElementById('applicant-email').value,
+                    phone: document.getElementById('applicant-phone').value,
+                    message: document.getElementById('applicant-message').value,
+                    resumeFileName: file.name,
+                    resumeMimeType: file.type,
+                    resumeBase64: resumeBase64
+                };
+
+                // Apps Script web apps don't support CORS preflight, so we post as
+                // text/plain with no-cors and treat the request as fire-and-forget.
+                await fetch(SHEET_ENDPOINT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(payload)
+                });
+
+                showStatus('Thank you! Your application has been submitted successfully.', 'success');
+                submitBtn.textContent = 'Submitted';
+                setTimeout(closeApplyModal, 2200);
+            } catch (err) {
+                console.error(err);
+                showStatus('Something went wrong while submitting. Please try again or email us directly.', 'error');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Application';
+            }
+        });
+    </script>
+</body>
+</html>
